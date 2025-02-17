@@ -39,7 +39,7 @@ def query_deep_seek_huoshan(prompt, role="You are a android source code analysis
     print(prompt)
     print('====================')
     client = OpenAI(
-        api_key = "b6db6f23-cd8d-46c2-b27e-cfa58e2f672d",
+        api_key = "",
         base_url = "https://ark.cn-beijing.volces.com/api/v3",
     )
 
@@ -56,22 +56,6 @@ def query_deep_seek_huoshan(prompt, role="You are a android source code analysis
 
     return completion.choices[0].message.content
 
-
-# def query_deep_seek_bailian(prompt, role="You are a android source code analysis assistant"):
-#     client = OpenAI(
-#     api_key="sk-ea7aaa1057804b52ba99d14ca39543c0",
-#     base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
-#     )
-
-#     completion = client.chat.completions.create(
-#         model="deepseek-v3",  # 此处以 deepseek-r1-distill-qwen-7b 为例，可按需更换模型名称。
-#         messages=[
-#             {'role': 'system', 'content': role},
-#             {'role': 'user', 'content': prompt}
-#             ]
-#     )
-#     return completion.choices[0].message.content
-
 def check_braces(json_string):
    stack = []
    for char in json_string:
@@ -87,7 +71,7 @@ def check_braces(json_string):
 
 def query_deep_seek_bailian(prompt, role="You are a android source code analysis assistant", retries=5, delay=60):
    client = OpenAI(
-       api_key="sk-ea7aaa1057804b52ba99d14ca39543c0",
+       api_key="",
        base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
    )
 
@@ -103,11 +87,7 @@ def query_deep_seek_bailian(prompt, role="You are a android source code analysis
            return completion.choices[0].message.content
        except BadRequestError as e:
             print(e)
-        #    if e.error.code == 'RequestTimeOut':
-        #        print(f"Request timed out, attempt {attempt + 1} of {retries}. Retrying in {delay} seconds...")
             time.sleep(delay)
-        #    else:
-            #    raise  # Re-raise the exception if it's not a timeout error
        except Exception as e:
            print(f"An unexpected error occurred: {e}")
            raise

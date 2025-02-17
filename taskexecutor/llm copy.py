@@ -56,7 +56,7 @@ def query_llm(prompt):
 
 def query_deep_seek_huoshan(prompt, role="You are a android source code analysis assistant"):
 
-    openai.api_key = "b6db6f23-cd8d-46c2-b27e-cfa58e2f672d"
+    openai.api_key = ""
     openai.api_base = "https://ark.cn-beijing.volces.com/api/v3"
 
     # openai.api_key_path = Path('./api.key').absolute()
@@ -87,7 +87,7 @@ def query_deep_seek_huoshan(prompt, role="You are a android source code analysis
 
 
 def query_deep_seek_bailian(prompt, role="You are a android source code analysis assistant"):
-    openai.api_key="sk-ea7aaa1057804b52ba99d14ca39543c0",
+    openai.api_key="",
     openai.api_base="https://dashscope.aliyuncs.com/compatible-mode/v1",
 
 
@@ -116,7 +116,7 @@ def query_deep_seek_bailian(prompt, role="You are a android source code analysis
 
 def query_deep_seek(prompt):
     
-    openai.api_key = "sk-9e853236c509491e807d4c4f65f74e3c"
+    openai.api_key = ""
     openai.api_base = "https://api.deepseek.com/beta"
 
     # openai.api_key_path = Path('./api.key').absolute()

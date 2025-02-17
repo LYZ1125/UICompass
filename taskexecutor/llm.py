@@ -27,7 +27,7 @@ def query_llm(prompt, messages= None, role="You are a android source code analys
 
 def query_deep_seek_huoshan(prompt, role="You are a android source code analysis assistant"):
     client = OpenAI(
-        api_key = "b6db6f23-cd8d-46c2-b27e-cfa58e2f672d",
+        api_key = "",
         base_url = "https://ark.cn-beijing.volces.com/api/v3",
     )
 
@@ -47,7 +47,7 @@ def query_deep_seek_huoshan(prompt, role="You are a android source code analysis
 
 def query_deep_seek_bailian(prompt, message=None, role="You are a android source code analysis assistant"):
     client = OpenAI(
-    api_key="sk-ea7aaa1057804b52ba99d14ca39543c0",
+    api_key="",
     base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
     )
     if not message:
@@ -82,9 +82,6 @@ def parse_json(answer):
     file_path = './temp.json'
     # 将 answer 转换为字符串（确保它是字符串类型）
     answer = str(answer)
-    
-    print('--------------original answer---------', answer)
-    print('---------over-------------')
 
     # 如果包含 '```json'，则去除代码块标记
     if '```json' in answer:
@@ -92,17 +89,12 @@ def parse_json(answer):
     answer = answer.strip()
 
     if not check_braces(answer):
-        print('----括号不匹配。')
         if '{"{"' in answer: #第一种情况
             answer = answer.replace('{"{"', '{"')
         elif '{{' in answer:
             answer = answer.replace('{{','{')
         else:
             answer = answer.replace('{', '', 1)
-
-
-    # 打印清理后的内容
-    print('-------清理后的内容-------\n', answer,'\n----------\n')
 
     # 步骤 1: 将 answer 保存到指定路径的正式文件
     with open(file_path, 'w', encoding='utf-8') as file:
@@ -113,24 +105,14 @@ def parse_json(answer):
     with open(file_path, 'r', encoding='utf-8') as file:
         file_content = file.read()
 
-    # 打印文件内容（调试用）
-    
     # 步骤 3: 解析 JSON 字符串
     try:
         data = json.loads(file_content)  # 解析 JSON 数据
     except json.JSONDecodeError as e:
-        # try:
-        #     file_content.replace('{\"{\"','{\"')
-        #     data = json.loads(file_content)
-        # except json.JSONDecodeError as e:
-
         print('Error parsing JSON:', e)
     return data
 
 if __name__ == '__main__':
-    # print(quert_llm('????'))
-    # print(query_deep_seek_bailian('good morning'))
-    # 步骤 2: 从文件读取数据
     file_path = './temp.json'
     with open(file_path, 'r', encoding='utf-8') as file:
         file_content = file.read()

@@ -29,7 +29,7 @@ from tenacity import (
 
 
 
-openai.api_key = "sk-9e853236c509491e807d4c4f65f74e3c"
+openai.api_key = ""
 openai.api_base = "https://api.deepseek.com/beta"
 
 # openai.api_key_path = Path('./api.key').absolute()
@@ -110,33 +110,6 @@ class Session:
 
     def query_llm(self,prompt):
         return llm.query_llm(prompt)
-        # print('-----------------query------------------')
-        # openai_api_key = "sk-9e853236c509491e807d4c4f65f74e3c"
-        # openai_api_base = "https://api.deepseek.com/beta"
-
-        # client = OpenAI(
-        #     api_key=openai_api_key,
-        #     base_url=openai_api_base,
-        # )
-        # history_openai_format = [{"role": "system", "content": "you are a UI Tester."}]
-        # history_openai_format.append({"role": "user", "content": prompt })
-        # try:
-        #     response = client.chat.completions.create(
-        #         model = "deepseek-chat",
-        #         messages=[
-        #             {"role":"system", "content": "You are a UI Tester"},
-        #             {"role":"user", "content": prompt}
-        #         ],
-        #         stream=False
-        #     )
-        #     response_content = response.choices[0].message.content
-        #     print('=================answer by llm:=================='
-        #     )
-        #     print(response_content)
-        #     return response_content
-        # except Exception as e:
-        #     print(e)
-        #     return "", 500
 
 
     def findFirstInteger(self, s: str):
@@ -154,9 +127,6 @@ class Session:
             if 'index-none' not in local and limit(self.findFirstInteger(local[5:])):
                 return self.findFirstInteger(local[5:])
         return -1
-        #if 'index-none' in response:
-        #    return -1
-        #raise NotImplementedError("How to deal with the situation where chatgpt cannot give any index?")
 
     def queryOpinion(self, prompt="") -> bool:
         prompt += "Please response in YES or NO, one word only."
