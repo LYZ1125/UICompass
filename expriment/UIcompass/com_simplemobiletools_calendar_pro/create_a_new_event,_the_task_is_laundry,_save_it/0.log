@@ -1,0 +1,502 @@
+2025-01-18 10:53:09,633 - INFO - This is a event:0
+2025-01-18 10:53:10,310 - INFO - -----query_current_activity start query------
+2025-01-18 10:53:10,313 - INFO - To achieve the task of creating a new event with the task "laundry" and saving it, you need to interact with the `MainActivity` and `TaskActivity` in the app. Here's a step-by-step guide on how to accomplish this:
+
+### Step 1: Launch the App and Navigate to the Main Screen
+1. **Launch the App**: Start the app, which will open the `SplashActivity` and then transition to the `MainActivity`.
+2. **Identify the Main Screen**: The `MainActivity` is the main screen where you can view and manage events and tasks.
+
+### Step 2: Open the Task Creation Screen
+1. **Locate the Floating Action Button (FAB)**: In the `MainActivity`, there is a Floating Action Button (FAB) with the ID `@+id/calendar_fab`. This button is used to create new events or tasks.
+2. **Click the FAB**: Click on the FAB to open the task creation screen. This will likely transition to the `TaskActivity`.
+
+### Step 3: Fill in the Task Details
+1. **Enter the Task Title**: In the `TaskActivity`, locate the `EditText` with the ID `@+id/task_title`. Enter the task title as "laundry".
+2. **Enter the Task Description (Optional)**: If you want to add a description, locate the `EditText` with the ID `@+id/task_description` and enter the description.
+3. **Set the Task Date and Time**: 
+   - Locate the `TextView` with the ID `@+id/task_date` to set the date.
+   - Locate the `TextView` with the ID `@+id/task_time` to set the time.
+4. **Set Reminders (Optional)**: If you want to set reminders, locate the `TextView` with the ID `@+id/task_reminder_1` and set the reminder time.
+
+### Step 4: Save the Task
+1. **Locate the Save Button**: In the `TaskActivity`, there should be a save button, typically in the action bar or as a floating button. This button is used to save the task.
+2. **Click the Save Button**: Click the save button to save the task "laundry".
+
+### Step 5: Verify the Task Creation
+1. **Navigate Back to Main Screen**: After saving the task, you should be navigated back to the `MainActivity`.
+2. **Verify the Task**: Check if the task "laundry" appears in the list of tasks or events in the `MainActivity`.
+
+### Summary of Key Elements:
+- **MainActivity**:
+  - Floating Action Button (FAB): `@+id/calendar_fab`
+- **TaskActivity**:
+  - Task Title: `@+id/task_title`
+  - Task Description: `@+id/task_description`
+  - Task Date: `@+id/task_date`
+  - Task Time: `@+id/task_time`
+  - Task Reminder: `@+id/task_reminder_1`
+  - Save Button: Typically in the action bar or as a floating button.
+
+### Example Code (Pseudocode):
+```java
+// Launch the app and navigate to MainActivity
+launchApp();
+
+// Click the FAB to open TaskActivity
+clickElementById("calendar_fab");
+
+// Enter task details in TaskActivity
+enterTextById("task_title", "laundry");
+enterTextById("task_description", "Wash clothes");
+setDateById("task_date", "2023-10-15");
+setTimeById("task_time", "10:00");
+setReminderById("task_reminder_1", "10 minutes before");
+
+// Save the task
+clickSaveButton();
+
+// Verify the task is created
+verifyTaskExists("laundry");
+```
+
+This pseudocode outlines the steps you would take to automate the task creation process. The actual implementation would depend on the testing framework or automation tool you are using.
+
+By following these steps, you should be able to create a new task "laundry" and save it successfully in the app.
+
+ Here is the information about the screen we are currently on.
+Widget(content-desc: Dialer notification: , class: android.widget.ImageView, position: (107, 1, 165, 74))
+Widget(content-desc: ATX notification: UIAutomator, class: android.widget.ImageView, position: (165, 1, 223, 74))
+Widget(content-desc: Android System notification: , class: android.widget.ImageView, position: (223, 1, 281, 74))
+Widget(content-desc: Speakerphone enabled., class: android.widget.ImageView, position: (819, 8, 866, 66))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/action_bar_root, class: android.widget.FrameLayout, position: (0, 74, 1080, 2277))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/main_coordinator, class: android.view.ViewGroup, position: (0, 74, 1080, 2277))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/main_menu, class: android.widget.LinearLayout, position: (0, 74, 1080, 242))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/top_app_bar_layout, class: android.widget.LinearLayout, position: (42, 74, 1038, 242))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/top_toolbar_holder, class: android.widget.RelativeLayout, position: (42, 95, 1038, 221))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/top_toolbar_search_icon, content-desc: Search, class: android.widget.ImageView, position: (42, 95, 147, 221))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/top_toolbar_search, text: Search, class: android.widget.EditText, position: (147, 95, 626, 221))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/top_toolbar, class: android.view.ViewGroup, position: (626, 95, 1027, 221))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/change_view, content-desc: Change view, class: android.widget.Button, position: (668, 95, 795, 221))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/settings, content-desc: Settings, class: android.widget.Button, position: (795, 95, 922, 221))
+Widget(content-desc: More options, class: android.widget.ImageView, position: (922, 95, 1027, 221))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/calendar_coordinator, class: android.view.ViewGroup, position: (0, 242, 1080, 2277))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/main_holder, class: android.view.ViewGroup, position: (0, 242, 1080, 2277))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/swipe_refresh_layout, class: android.view.ViewGroup, position: (0, 242, 1080, 2277))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/fragments_holder, class: android.widget.FrameLayout, position: (0, 242, 1080, 2277))
+Widget(text: January, class: w4.i, position: (0, 242, 1080, 2277))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_calendar_holder, class: android.widget.RelativeLayout, position: (0, 242, 1080, 2277))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/top_left_arrow, class: android.widget.ImageView, position: (0, 242, 147, 384))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/top_value, content-desc: January, text: January, class: android.widget.TextView, position: (147, 242, 933, 384))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/top_right_arrow, class: android.widget.ImageView, position: (933, 242, 1080, 384))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_wrapper, class: android.widget.FrameLayout, position: (0, 384, 1080, 2277))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view, class: android.view.View, position: (0, 384, 1080, 2277))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (0, 458, 154, 761))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (154, 458, 308, 761))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (309, 458, 463, 761))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (463, 458, 617, 761))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (617, 458, 771, 761))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (771, 458, 925, 761))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (926, 458, 1080, 761))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (0, 761, 154, 1064))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (154, 761, 308, 1064))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (309, 761, 463, 1064))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (463, 761, 617, 1064))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (617, 761, 771, 1064))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (771, 761, 925, 1064))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (926, 761, 1080, 1064))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (0, 1064, 154, 1367))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (154, 1064, 308, 1367))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (309, 1064, 463, 1367))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (463, 1064, 617, 1367))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (617, 1064, 771, 1367))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (771, 1064, 925, 1367))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (926, 1064, 1080, 1367))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (0, 1368, 154, 1671))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (154, 1368, 308, 1671))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (309, 1368, 463, 1671))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (463, 1368, 617, 1671))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (617, 1368, 771, 1671))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (771, 1368, 925, 1671))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (926, 1368, 1080, 1671))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (0, 1670, 154, 1973))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (154, 1670, 308, 1973))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (309, 1670, 463, 1973))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (463, 1670, 617, 1973))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (617, 1670, 771, 1973))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (771, 1670, 925, 1973))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (926, 1670, 1080, 1973))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (0, 1974, 154, 2277))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (154, 1974, 308, 2277))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (309, 1974, 463, 2277))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (463, 1974, 617, 2277))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (617, 1974, 771, 2277))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (771, 1974, 925, 2277))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/month_view_background, class: android.view.View, position: (926, 1974, 1080, 2277))
+Widget(resource-id: com.simplemobiletools.calendar.pro:id/calendar_fab, content-desc: New Event, class: android.widget.ImageButton, position: (891, 2088, 1038, 2235))
+
+
+        I would like to know which activity/fragment we are currently on.
+        Please respond in the following JSON format:
+        {
+        "activity_or_fragment": "TestActivity",
+        }
+        or 
+        {
+        "activity_or_fragment": "TestFragment",
+        }
+        If can not determine the activity/fragment,just output{
+        "activity_or_fragment": "Unknown"
+        }
+        Do not output anything else except json format result.
+        
+2025-01-18 10:53:12,258 - INFO - ------answer------
+2025-01-18 10:53:12,258 - INFO - ```json
+{
+  "activity_or_fragment": "MainActivity"
+}
+```
+2025-01-18 10:53:14,492 - INFO - ------query_instructions------
+2025-01-18 10:53:14,496 - INFO - Error: 500, <!doctype html>
+<html lang=en>
+  <head>
+    <title>openai.BadRequestError: Error code: 400 - {&#39;error&#39;: {&#39;message&#39;: &#34;This model&#39;s maximum context length is 65536 tokens. However, you requested 78028 tokens (78028 in the messages, 0 in the completion). Please reduce the length of the messages or completion.&#34;, &#39;type&#39;: &#39;invalid_request_error&#39;, &#39;param&#39;: None, &#39;code&#39;: &#39;invalid_request_error&#39;}}
+ // Werkzeug Debugger</title>
+    <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css">
+    <link rel="shortcut icon"
+        href="?__debugger__=yes&amp;cmd=resource&amp;f=console.png">
+    <script src="?__debugger__=yes&amp;cmd=resource&amp;f=debugger.js"></script>
+    <script>
+      var CONSOLE_MODE = false,
+          EVALEX = true,
+          EVALEX_TRUSTED = false,
+          SECRET = "tMJvgBcaLyoI6bq8kfpY";
+    </script>
+  </head>
+  <body style="background-color: #fff">
+    <div class="debugger">
+<h1>BadRequestError</h1>
+<div class="detail">
+  <p class="errormsg">openai.BadRequestError: Error code: 400 - {&#39;error&#39;: {&#39;message&#39;: &#34;This model&#39;s maximum context length is 65536 tokens. However, you requested 78028 tokens (78028 in the messages, 0 in the completion). Please reduce the length of the messages or completion.&#34;, &#39;type&#39;: &#39;invalid_request_error&#39;, &#39;param&#39;: None, &#39;code&#39;: &#39;invalid_request_error&#39;}}
+</p>
+</div>
+<h2 class="traceback">Traceback <em>(most recent call last)</em></h2>
+<div class="traceback">
+  <h3></h3>
+  <ul><li><div class="frame" id="frame-1945997044752">
+  <h4>File <cite class="filename">"C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">1536</em>,
+      in <code class="function">__call__</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">    </span>) -&gt; cabc.Iterable[bytes]:</pre>
+<pre class="line before"><span class="ws">        </span>&#34;&#34;&#34;The WSGI server calls the Flask application object as the</pre>
+<pre class="line before"><span class="ws">        </span>WSGI application. This calls :meth:`wsgi_app`, which can be</pre>
+<pre class="line before"><span class="ws">        </span>wrapped to apply middleware.</pre>
+<pre class="line before"><span class="ws">        </span>&#34;&#34;&#34;</pre>
+<pre class="line current"><span class="ws">        </span>return self.wsgi_app(environ, start_response)</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1945998523856">
+  <h4>File <cite class="filename">"C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">1514</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line before"><span class="ws">                </span>response = self.full_dispatch_request()</pre>
+<pre class="line before"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line before"><span class="ws">                </span>error = e</pre>
+<pre class="line current"><span class="ws">                </span>response = self.handle_exception(e)</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre>
+<pre class="line after"><span class="ws">                </span>raise</pre>
+<pre class="line after"><span class="ws">            </span>return response(environ, start_response)</pre>
+<pre class="line after"><span class="ws">        </span>finally:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1945998523968">
+  <h4>File <cite class="filename">"C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">1511</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>ctx = self.request_context(environ)</pre>
+<pre class="line before"><span class="ws">        </span>error: BaseException | None = None</pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line current"><span class="ws">                </span>response = self.full_dispatch_request()</pre>
+<pre class="line after"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">                </span>error = e</pre>
+<pre class="line after"><span class="ws">                </span>response = self.handle_exception(e)</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1945998524080">
+  <h4>File <cite class="filename">"C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">919</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>request_started.send(self, _async_wrapper=self.ensure_sync)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line before"><span class="ws">                </span>rv = self.dispatch_request()</pre>
+<pre class="line before"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line current"><span class="ws">            </span>rv = self.handle_user_exception(e)</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(</pre>
+<pre class="line after"><span class="ws">        </span>self,</pre>
+<pre class="line after"><span class="ws">        </span>rv: ft.ResponseReturnValue | HTTPException,</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1945998524192">
+  <h4>File <cite class="filename">"C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">917</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>request_started.send(self, _async_wrapper=self.ensure_sync)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line current"><span class="ws">                </span>rv = self.dispatch_request()</pre>
+<pre class="line after"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">            </span>rv = self.handle_user_exception(e)</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1945998524304">
+  <h4>File <cite class="filename">"C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">902</em>,
+      in <code class="function">dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>and req.method == &#34;OPTIONS&#34;</pre>
+<pre class="line before"><span class="ws">        </span>):</pre>
+<pre class="line before"><span class="ws">            </span>return self.make_default_options_response()</pre>
+<pre class="line before"><span class="ws">        </span># otherwise dispatch to the handler for that endpoint</pre>
+<pre class="line before"><span class="ws">        </span>view_args: dict[str, t.Any] = req.view_args  # type: ignore[assignment]</pre>
+<pre class="line current"><span class="ws">        </span>return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def full_dispatch_request(self) -&gt; Response:</pre>
+<pre class="line after"><span class="ws">        </span>&#34;&#34;&#34;Dispatches the request and on top of that performs request</pre>
+<pre class="line after"><span class="ws">        </span>pre and postprocessing as well as HTTP exception catching and</pre>
+<pre class="line after"><span class="ws">        </span>error handling.</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1945998688320">
+  <h4>File <cite class="filename">"D:\code\AndroidSourceCodeAnalyzer\AndroidSourceCodeAnalyzer\app.py"</cite>,
+      line <em class="line">85</em>,
+      in <code class="function">prompt1</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">    </span>prompt = task_planner.construct_prompt(target_task, app_package_map[package][&#39;atg_analyzer&#39;], app_package_map[package][&#39;layout_analyzer&#39;], app_package_map[package][&#39;activity_fragment_mapping&#39;], only_layout = False)</pre>
+<pre class="line before"><span class="ws">    </span>print(&#34;构建的 Prompt：\n&#34;, prompt)</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span># 调用 LLM 获取结果</pre>
+<pre class="line before"><span class="ws">    </span>print(&#34;\n调用 LLM 获取结果...\n&#34;)</pre>
+<pre class="line current"><span class="ws">    </span>response = llm.query_deep_seek(prompt,role=&#34;You are a user of the given app.&#34;)</pre>
+<pre class="line after"><span class="ws">    </span>print(&#39;-----------&#39; * 10 )</pre>
+<pre class="line after"><span class="ws">    </span>print(response)</pre>
+<pre class="line after"><span class="ws"></span>#</pre>
+<pre class="line after"><span class="ws">    </span># 返回结果</pre>
+<pre class="line after"><span class="ws">    </span># response = &#34;..&#34;</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1945998690896">
+  <h4>File <cite class="filename">"D:\code\AndroidSourceCodeAnalyzer\AndroidSourceCodeAnalyzer\llm.py"</cite>,
+      line <em class="line">9</em>,
+      in <code class="function">query_deep_seek</code></h4>
+  <div class="source "><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws"></span>def query_deep_seek(prompt, role=&#34;You are a android source code analysis assistant&#34;):</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>client = OpenAI(api_key=config.deep_seek_key, base_url=&#34;https://api.deepseek.com&#34;)</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line current"><span class="ws">    </span>response = client.chat.completions.create(</pre>
+<pre class="line after"><span class="ws">        </span>model=&#34;deepseek-chat&#34;,</pre>
+<pre class="line after"><span class="ws">        </span>messages=[</pre>
+<pre class="line after"><span class="ws">            </span>{&#34;role&#34;: &#34;system&#34;, &#34;content&#34;: role},</pre>
+<pre class="line after"><span class="ws">            </span>{&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: prompt},</pre>
+<pre class="line after"><span class="ws">        </span>],</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1945998691680">
+  <h4>File <cite class="filename">"C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\openai\_utils\_utils.py"</cite>,
+      line <em class="line">275</em>,
+      in <code class="function">wrapper</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">                    </span>if len(missing) &gt; 1:</pre>
+<pre class="line before"><span class="ws">                        </span>msg = f&#34;Missing required arguments: {human_join([quote(arg) for arg in missing])}&#34;</pre>
+<pre class="line before"><span class="ws">                    </span>else:</pre>
+<pre class="line before"><span class="ws">                        </span>msg = f&#34;Missing required argument: {quote(missing[0])}&#34;</pre>
+<pre class="line before"><span class="ws">                </span>raise TypeError(msg)</pre>
+<pre class="line current"><span class="ws">            </span>return func(*args, **kwargs)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">        </span>return wrapper  # type: ignore</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>return inner</pre>
+<pre class="line after"><span class="ws"></span> </pre></div>
+</div>
+
+<li><div class="frame" id="frame-1945998668064">
+  <h4>File <cite class="filename">"C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\openai\resources\chat\completions.py"</cite>,
+      line <em class="line">829</em>,
+      in <code class="function">create</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>extra_query: Query | None = None,</pre>
+<pre class="line before"><span class="ws">        </span>extra_body: Body | None = None,</pre>
+<pre class="line before"><span class="ws">        </span>timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,</pre>
+<pre class="line before"><span class="ws">    </span>) -&gt; ChatCompletion | Stream[ChatCompletionChunk]:</pre>
+<pre class="line before"><span class="ws">        </span>validate_response_format(response_format)</pre>
+<pre class="line current"><span class="ws">        </span>return self._post(</pre>
+<pre class="line after"><span class="ws">            </span>&#34;/chat/completions&#34;,</pre>
+<pre class="line after"><span class="ws">            </span>body=maybe_transform(</pre>
+<pre class="line after"><span class="ws">                </span>{</pre>
+<pre class="line after"><span class="ws">                    </span>&#34;messages&#34;: messages,</pre>
+<pre class="line after"><span class="ws">                    </span>&#34;model&#34;: model,</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1946000247040">
+  <h4>File <cite class="filename">"C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\openai\_base_client.py"</cite>,
+      line <em class="line">1280</em>,
+      in <code class="function">post</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>stream_cls: type[_StreamT] | None = None,</pre>
+<pre class="line before"><span class="ws">    </span>) -&gt; ResponseT | _StreamT:</pre>
+<pre class="line before"><span class="ws">        </span>opts = FinalRequestOptions.construct(</pre>
+<pre class="line before"><span class="ws">            </span>method=&#34;post&#34;, url=path, json_data=body, files=to_httpx_files(files), **options</pre>
+<pre class="line before"><span class="ws">        </span>)</pre>
+<pre class="line current"><span class="ws">        </span>return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def patch(</pre>
+<pre class="line after"><span class="ws">        </span>self,</pre>
+<pre class="line after"><span class="ws">        </span>path: str,</pre>
+<pre class="line after"><span class="ws">        </span>*,</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1945997464176">
+  <h4>File <cite class="filename">"C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\openai\_base_client.py"</cite>,
+      line <em class="line">957</em>,
+      in <code class="function">request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>if remaining_retries is not None:</pre>
+<pre class="line before"><span class="ws">            </span>retries_taken = options.get_max_retries(self.max_retries) - remaining_retries</pre>
+<pre class="line before"><span class="ws">        </span>else:</pre>
+<pre class="line before"><span class="ws">            </span>retries_taken = 0</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line current"><span class="ws">        </span>return self._request(</pre>
+<pre class="line after"><span class="ws">            </span>cast_to=cast_to,</pre>
+<pre class="line after"><span class="ws">            </span>options=options,</pre>
+<pre class="line after"><span class="ws">            </span>stream=stream,</pre>
+<pre class="line after"><span class="ws">            </span>stream_cls=stream_cls,</pre>
+<pre class="line after"><span class="ws">            </span>retries_taken=retries_taken,</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1945997464288">
+  <h4>File <cite class="filename">"C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\openai\_base_client.py"</cite>,
+      line <em class="line">1061</em>,
+      in <code class="function">_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span># to completion before attempting to access the response text.</pre>
+<pre class="line before"><span class="ws">            </span>if not err.response.is_closed:</pre>
+<pre class="line before"><span class="ws">                </span>err.response.read()</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">            </span>log.debug(&#34;Re-raising status error&#34;)</pre>
+<pre class="line current"><span class="ws">            </span>raise self._make_status_error_from_response(err.response) from None</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">        </span>return self._process_response(</pre>
+<pre class="line after"><span class="ws">            </span>cast_to=cast_to,</pre>
+<pre class="line after"><span class="ws">            </span>options=options,</pre>
+<pre class="line after"><span class="ws">            </span>response=response,</pre></div>
+</div>
+</ul>
+  <blockquote>openai.BadRequestError: Error code: 400 - {&#39;error&#39;: {&#39;message&#39;: &#34;This model&#39;s maximum context length is 65536 tokens. However, you requested 78028 tokens (78028 in the messages, 0 in the completion). Please reduce the length of the messages or completion.&#34;, &#39;type&#39;: &#39;invalid_request_error&#39;, &#39;param&#39;: None, &#39;code&#39;: &#39;invalid_request_error&#39;}}
+</blockquote>
+</div>
+
+<div class="plain">
+    <p>
+      This is the Copy/Paste friendly version of the traceback.
+    </p>
+    <textarea cols="50" rows="10" name="code" readonly>Traceback (most recent call last):
+  File &#34;C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\flask\app.py&#34;, line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+  File &#34;C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\flask\app.py&#34;, line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File &#34;C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\flask\app.py&#34;, line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File &#34;C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\flask\app.py&#34;, line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File &#34;C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\flask\app.py&#34;, line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File &#34;C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\flask\app.py&#34;, line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File &#34;D:\code\AndroidSourceCodeAnalyzer\AndroidSourceCodeAnalyzer\app.py&#34;, line 85, in prompt1
+    response = llm.query_deep_seek(prompt,role=&#34;You are a user of the given app.&#34;)
+  File &#34;D:\code\AndroidSourceCodeAnalyzer\AndroidSourceCodeAnalyzer\llm.py&#34;, line 9, in query_deep_seek
+    response = client.chat.completions.create(
+  File &#34;C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\openai\_utils\_utils.py&#34;, line 275, in wrapper
+    return func(*args, **kwargs)
+  File &#34;C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\openai\resources\chat\completions.py&#34;, line 829, in create
+    return self._post(
+  File &#34;C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\openai\_base_client.py&#34;, line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File &#34;C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\openai\_base_client.py&#34;, line 957, in request
+    return self._request(
+  File &#34;C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\openai\_base_client.py&#34;, line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {&#39;error&#39;: {&#39;message&#39;: &#34;This model&#39;s maximum context length is 65536 tokens. However, you requested 78028 tokens (78028 in the messages, 0 in the completion). Please reduce the length of the messages or completion.&#34;, &#39;type&#39;: &#39;invalid_request_error&#39;, &#39;param&#39;: None, &#39;code&#39;: &#39;invalid_request_error&#39;}}
+</textarea>
+</div>
+<div class="explanation">
+  The debugger caught an exception in your WSGI application.  You can now
+  look at the traceback which led to the error.  <span class="nojavascript">
+  If you enable JavaScript you can also use additional features such as code
+  execution (if the evalex feature is enabled), automatic pasting of the
+  exceptions and much more.</span>
+</div>
+      <div class="footer">
+        Brought to you by <strong class="arthur">DON'T PANIC</strong>, your
+        friendly Werkzeug powered traceback interpreter.
+      </div>
+    </div>
+
+    <div class="pin-prompt">
+      <div class="inner">
+        <h3>Console Locked</h3>
+        <p>
+          The console is locked and needs to be unlocked by entering the PIN.
+          You can find the PIN printed out on the standard output of your
+          shell that runs the server.
+        <form>
+          <p>PIN:
+            <input type=text name=pin size=14>
+            <input type=submit name=btn value="Confirm Pin">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+
+Traceback (most recent call last):
+  File "C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "D:\code\AndroidSourceCodeAnalyzer\AndroidSourceCodeAnalyzer\app.py", line 85, in prompt1
+    response = llm.query_deep_seek(prompt,role="You are a user of the given app.")
+  File "D:\code\AndroidSourceCodeAnalyzer\AndroidSourceCodeAnalyzer\llm.py", line 9, in query_deep_seek
+    response = client.chat.completions.create(
+  File "C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\openai\_utils\_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\openai\resources\chat\completions.py", line 829, in create
+    return self._post(
+  File "C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\openai\_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\openai\_base_client.py", line 957, in request
+    return self._request(
+  File "C:\Users\wongj\anaconda3\envs\tree-sitter\lib\site-packages\openai\_base_client.py", line 1061, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 65536 tokens. However, you requested 78028 tokens (78028 in the messages, 0 in the completion). Please reduce the length of the messages or completion.", 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}
+
+
+-->
+
