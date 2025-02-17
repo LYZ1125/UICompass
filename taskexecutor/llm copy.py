@@ -59,12 +59,8 @@ def query_deep_seek_huoshan(prompt, role="You are a android source code analysis
     openai.api_key = ""
     openai.api_base = "https://ark.cn-beijing.volces.com/api/v3"
 
-    # openai.api_key_path = Path('./api.key').absolute()
-    # openai.api_base = "https://api.example.com/v1"
     model ="ep-20250207124903-xnshd" 
 
-    # model = 'gpt-3.5-turbo'
-    # expensive_model = 'gpt-4'
     temp = 0.2
     system_message: str
 
@@ -119,12 +115,8 @@ def query_deep_seek(prompt):
     openai.api_key = ""
     openai.api_base = "https://api.deepseek.com/beta"
 
-    # openai.api_key_path = Path('./api.key').absolute()
-    # openai.api_base = "https://api.example.com/v1"
     model = "deepseek-chat"
 
-    # model = 'gpt-3.5-turbo'
-    # expensive_model = 'gpt-4'
     temp = 0.2
     system_message: str
 
