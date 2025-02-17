@@ -1,0 +1,2538 @@
+{
+    "activities": [
+        {
+            "name": "com.simplemobiletools.filemanager.pro.activities.SplashActivity",
+            "layouts": [],
+            "fragments": [],
+            "dialogs": [],
+            "elements": [],
+            "summary": "This activity serves as the initial screen of the application. It checks if the intent action is `ACTION_VIEW` and if the intent data is not null. If both conditions are met, it starts `MainActivity` with the same action and data. Otherwise, it starts `MainActivity` without any additional data. After starting the appropriate activity, `SplashActivity` is finished.",
+            "transfer": [
+                "MainActivity"
+            ]
+        },
+        {
+            "name": "com.simplemobiletools.filemanager.pro.activities.MainActivity",
+            "layouts": [
+                {
+                    "name": "R.menu.main_menu",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_main",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/main_coordinator"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "serves as the root layout coordinating the placement of other UI elements in the activity."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MySearchMenu",
+                                "id": "@+id/main_menu"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "search",
+                                "effect": "provides search functionality within the file manager, allowing users to quickly locate files or directories."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/main_holder"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "container",
+                                "effect": "holds the main content of the activity, including the ViewPager and TabLayout."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyViewPager",
+                                "id": "@+id/main_view_pager",
+                                "layout_above": "@+id/main_tabs_holder"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "navigate",
+                                "effect": "allows switching between different fragments (ItemsFragment, RecentsFragment, StorageFragment) by swiping or selecting tabs."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.tabs.TabLayout",
+                                "id": "@+id/main_tabs_holder",
+                                "layout_alignParentBottom": "true",
+                                "tabIndicator": "@null",
+                                "tabMinWidth": "150dp",
+                                "tabRippleColor": "@null"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "navigation",
+                                "effect": "provides tabs for switching between different views (Files, Recent Files, Storage Analysis) in the activity."
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "bottom_tablayout_item",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_main",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/main_coordinator"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "serves as the root layout coordinating the placement of other UI elements in the activity."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MySearchMenu",
+                                "id": "@+id/main_menu"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "search",
+                                "effect": "provides search functionality within the file manager, allowing users to quickly locate files or directories."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/main_holder"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "container",
+                                "effect": "holds the main content of the activity, including the ViewPager and TabLayout."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyViewPager",
+                                "id": "@+id/main_view_pager",
+                                "layout_above": "@+id/main_tabs_holder"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "navigate",
+                                "effect": "allows switching between different fragments (ItemsFragment, RecentsFragment, StorageFragment) by swiping or selecting tabs."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.tabs.TabLayout",
+                                "id": "@+id/main_tabs_holder",
+                                "layout_alignParentBottom": "true",
+                                "tabIndicator": "@null",
+                                "tabMinWidth": "150dp",
+                                "tabRippleColor": "@null"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "navigation",
+                                "effect": "provides tabs for switching between different views (Files, Recent Files, Storage Analysis) in the activity."
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.menu",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [
+                {
+                    "name": "ItemsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "RecentsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "StorageFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "MyViewPagerFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "ItemsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "MyViewPagerFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "RecentsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "StorageFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [],
+            "elements": [],
+            "summary": "The MainActivity in the Simple Mobile Tools File Manager Pro is the central activity responsible for managing file operations, navigation, and UI customizations. It handles file browsing, favorites management, view and column count adjustments, sorting, and various configurations such as storage permissions, root access, and password protection. The activity also manages fragments for different views (ItemsFragment, RecentsFragment, StorageFragment) and provides functionalities for launching settings, about information, and handling intents for file selection and creation.",
+            "transfer": [
+                "AboutActivity",
+                "SettingsActivity"
+            ]
+        },
+        {
+            "name": "com.simplemobiletools.filemanager.pro.activities.MimeTypesActivity",
+            "layouts": [
+                {
+                    "name": "R.id.search",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.menu_file",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.xx",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_mime_types",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.menu_mime_types",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.mimetypes_toolbar_menu",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "mimetypes_activity",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.search_menu",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.xx",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "xx.xml",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_mimetypes",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/mimetypes_coordinator"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/mimetypes_toolbar",
+                                "menu": "@menu/menu_mimetypes",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/mimetypes_holder",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/mimetypes_placeholder",
+                                "layout_centerHorizontal": "true",
+                                "alpha": "0.8",
+                                "text": "@string/no_items_found",
+                                "textSize": "@dimen/bigger_text_size",
+                                "textStyle": "italic",
+                                "visibility": "gone"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/mimetypes_placeholder_2",
+                                "layout_below": "@+id/mimetypes_placeholder",
+                                "layout_centerHorizontal": "true",
+                                "alpha": "0.8",
+                                "text": "@string/type_2_characters",
+                                "textSize": "@dimen/bigger_text_size",
+                                "textStyle": "italic",
+                                "visibility": "gone"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.qtalk.recyclerviewfastscroller.RecyclerViewFastScroller",
+                                "id": "@+id/mimetypes_fastscroller"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyRecyclerView",
+                                "id": "@+id/mimetypes_list",
+                                "clipToPadding": "false",
+                                "layoutAnimation": "@anim/layout_animation",
+                                "scrollbars": "none",
+                                "layoutManager": "com.simplemobiletools.commons.views.MyGridLayoutManager"
+                            },
+                            "dynamic_properties": []
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [
+                {
+                    "name": "ItemsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "MyViewPagerFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "RecentsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "StorageFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "StorageFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [],
+            "elements": [],
+            "summary": "The MimeTypesActivity is responsible for displaying and managing files based on their MIME types. It includes functionalities such as sorting and displaying files in a RecyclerView, changing the view type (grid or list), adjusting column counts in grid view, searching, toggling filename and hidden file visibility, and managing file deletion. The activity also supports zoom functionality in grid view and provides a customizable toolbar with various options for user interaction.",
+            "transfer": []
+        },
+        {
+            "name": "com.simplemobiletools.filemanager.pro.activities.ReadTextActivity",
+            "layouts": [
+                {
+                    "name": "activity_read_text",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/read_text_coordinator"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "provides a container for coordinating the layout and behavior of child views in the activity."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/read_text_toolbar",
+                                "menu": "@menu/menu_editor",
+                                "title": "File Editor",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "toolbar",
+                                "effect": "displays a toolbar with a menu for accessing actions like search, save, and print."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "LinearLayout",
+                                "id": "@+id/read_text_wrapper",
+                                "fillViewport": "true",
+                                "orientation": "vertical",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "wraps the main content and search functionality in a vertical linear layout."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/search_wrapper",
+                                "layout": "@layout/search_bar"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "include",
+                                "effect": "includes a search bar layout for text search functionality within the activity."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.core.widget.NestedScrollView",
+                                "id": "@+id/read_text_holder",
+                                "fillViewport": "true"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "container",
+                                "effect": "holds the text content in a scrollable view for easy navigation."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.filemanager.pro.views.GestureEditText",
+                                "id": "@+id/read_text_view",
+                                "inputType": "textMultiLine|textNoSuggestions",
+                                "textCursorDrawable": "@null",
+                                "textSize": "@dimen/smaller_text_size"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "text input",
+                                "effect": "displays and allows editing of the text content, with support for multi-line input and text search highlighting."
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_read_text",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/read_text_coordinator"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "provides a container for coordinating the layout and behavior of child views in the activity."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/read_text_toolbar",
+                                "menu": "@menu/menu_editor",
+                                "title": "File Editor",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "toolbar",
+                                "effect": "displays a toolbar with a menu for accessing actions like search, save, and print."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "LinearLayout",
+                                "id": "@+id/read_text_wrapper",
+                                "fillViewport": "true",
+                                "orientation": "vertical",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "wraps the main content and search functionality in a vertical linear layout."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/search_wrapper",
+                                "layout": "@layout/search_bar"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "include",
+                                "effect": "includes a search bar layout for text search functionality within the activity."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.core.widget.NestedScrollView",
+                                "id": "@+id/read_text_holder",
+                                "fillViewport": "true"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "container",
+                                "effect": "holds the text content in a scrollable view for easy navigation."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.filemanager.pro.views.GestureEditText",
+                                "id": "@+id/read_text_view",
+                                "inputType": "textMultiLine|textNoSuggestions",
+                                "textCursorDrawable": "@null",
+                                "textSize": "@dimen/smaller_text_size"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "text input",
+                                "effect": "displays and allows editing of the text content, with support for multi-line input and text search highlighting."
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.menu_read_text",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [
+                {
+                    "name": "ItemsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "MyViewPagerFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "RecentsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "StorageFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [],
+            "elements": [],
+            "summary": "The `ReadTextActivity` is designed to handle the reading, editing, and searching of text content from a file or URI. It provides functionality to display text in a `GestureEditText`, search for specific text within the content, navigate between search results, save the text to a file, and print the text using a WebView. The activity also manages the UI for text editing, including handling search activation, closing search, and managing unsaved changes when navigating back.",
+            "transfer": []
+        },
+        {
+            "name": "com.simplemobiletools.filemanager.pro.activities.PDFViewerActivity",
+            "layouts": [
+                {
+                    "name": "R.drawable.ic_three_dots_vector",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.menu_pdf_viewer",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.drawable.ic_arrow_left_vector",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_pdf_viewer",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/pdf_viewer_wrapper",
+                                "layout_behavior": "@string/appbar_scrolling_view_behavior"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout_behavior",
+                                "effect": "Wraps the PDF viewer and app bar, enabling scrolling behavior coordinated with the app bar."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.github.barteksc.pdfviewer.PDFView",
+                                "id": "@+id/pdf_viewer"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "display",
+                                "effect": "Renders and displays the PDF content, allowing users to scroll, zoom, and interact with the document."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/top_shadow",
+                                "layout_alignParentTop": "true",
+                                "contentDescription": "@null"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "visual",
+                                "effect": "Provides a visual shadow effect at the top of the screen, enhancing UI aesthetics."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.AppBarLayout",
+                                "id": "@+id/pdf_viewer_appbar",
+                                "layout_alignParentTop": "true",
+                                "elevation": "0dp"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "Serves as the app bar container, dynamically adjusting its height and padding based on device configuration and navigation bar position."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/pdf_viewer_toolbar",
+                                "menu": "@menu/menu_pdf_viewer",
+                                "navigationIcon": "@drawable/ic_arrow_left_vector"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "navigation",
+                                "effect": "Provides navigation controls, including a back button and a menu for actions like printing, with dynamic UI adjustments based on orientation and screen size."
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_pdf_viewer",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/pdf_viewer_wrapper",
+                                "layout_behavior": "@string/appbar_scrolling_view_behavior"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout_behavior",
+                                "effect": "Wraps the PDF viewer and app bar, enabling scrolling behavior coordinated with the app bar."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.github.barteksc.pdfviewer.PDFView",
+                                "id": "@+id/pdf_viewer"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "display",
+                                "effect": "Renders and displays the PDF content, allowing users to scroll, zoom, and interact with the document."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/top_shadow",
+                                "layout_alignParentTop": "true",
+                                "contentDescription": "@null"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "visual",
+                                "effect": "Provides a visual shadow effect at the top of the screen, enhancing UI aesthetics."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.AppBarLayout",
+                                "id": "@+id/pdf_viewer_appbar",
+                                "layout_alignParentTop": "true",
+                                "elevation": "0dp"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "Serves as the app bar container, dynamically adjusting its height and padding based on device configuration and navigation bar position."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/pdf_viewer_toolbar",
+                                "menu": "@menu/menu_pdf_viewer",
+                                "navigationIcon": "@drawable/ic_arrow_left_vector"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "navigation",
+                                "effect": "Provides navigation controls, including a back button and a menu for actions like printing, with dynamic UI adjustments based on orientation and screen size."
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [
+                {
+                    "name": "ItemsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "MyViewPagerFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "RecentsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "StorageFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [],
+            "elements": [],
+            "summary": "The PDFViewerActivity is designed to display and interact with PDF files. It handles loading PDFs, managing UI elements like the toolbar and app bar, supporting full-screen mode, handling device configuration changes, and providing printing functionality. It also supports device features like notches and dynamically adjusts the layout based on screen orientation and navigation bar position.",
+            "transfer": []
+        },
+        {
+            "name": "com.simplemobiletools.filemanager.pro.activities.DecompressActivity",
+            "layouts": [
+                {
+                    "name": "R.menu.decompress_menu",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_decompress",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/decompress_coordinator"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "serves as the root layout for coordinating the activity's views and interactions."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/decompress_toolbar",
+                                "menu": "@menu/menu_decompress",
+                                "title": "Decompress",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "navigation",
+                                "effect": "provides a toolbar with navigation functionality, including a menu for decompression actions and a title indicating the activity's purpose."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/decompress_wrapper",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "wraps the content area of the activity, ensuring proper viewport filling and scroll behavior."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyRecyclerView",
+                                "id": "@+id/decompress_list",
+                                "clipToPadding": "false",
+                                "scrollbars": "none",
+                                "layoutManager": "com.simplemobiletools.commons.views.MyLinearLayoutManager"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "display",
+                                "effect": "displays the list of files and directories within the ZIP file, allowing users to navigate and decompress the contents."
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_decompress",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/decompress_coordinator"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "serves as the root layout for coordinating the activity's views and interactions."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/decompress_toolbar",
+                                "menu": "@menu/menu_decompress",
+                                "title": "Decompress",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "navigation",
+                                "effect": "provides a toolbar with navigation functionality, including a menu for decompression actions and a title indicating the activity's purpose."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/decompress_wrapper",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "wraps the content area of the activity, ensuring proper viewport filling and scroll behavior."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyRecyclerView",
+                                "id": "@+id/decompress_list",
+                                "clipToPadding": "false",
+                                "scrollbars": "none",
+                                "layoutManager": "com.simplemobiletools.commons.views.MyLinearLayoutManager"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "display",
+                                "effect": "displays the list of files and directories within the ZIP file, allowing users to navigate and decompress the contents."
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [
+                {
+                    "name": "ItemsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "MyViewPagerFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "RecentsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "StorageFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [],
+            "elements": [],
+            "summary": "The DecompressActivity is responsible for decompressing ZIP files. It allows users to select a ZIP file, navigate its contents, and decompress it to a chosen destination. The activity handles password-protected ZIP files, ensures secure decompression by checking for path traversal vulnerabilities, and manages UI updates for navigation and file listing. It also supports background decompression and provides user feedback via toast messages.",
+            "transfer": []
+        },
+        {
+            "name": "com.simplemobiletools.filemanager.pro.activities.SaveAsActivity",
+            "layouts": [
+                {
+                    "name": "activity_save_as",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/activity_save_as_coordinator"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "serves as the root layout for the activity, managing the positioning and behavior of child views."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/activity_save_as_toolbar",
+                                "title": "@string/save_as",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "display",
+                                "effect": "displays the title 'Save As' and provides a navigation icon for returning to the previous screen."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/activity_save_as_holder"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "holds and organizes the main content of the activity, such as file selection and saving UI elements."
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_save_as",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/activity_save_as_coordinator"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "serves as the root layout for the activity, managing the positioning and behavior of child views."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/activity_save_as_toolbar",
+                                "title": "@string/save_as",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "display",
+                                "effect": "displays the title 'Save As' and provides a navigation icon for returning to the previous screen."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/activity_save_as_holder"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "holds and organizes the main content of the activity, such as file selection and saving UI elements."
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [
+                {
+                    "name": "ItemsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "MyViewPagerFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "RecentsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "StorageFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [],
+            "elements": [],
+            "summary": "The `SaveAsActivity` is responsible for saving files sent via intents. It processes incoming intents with the `ACTION_SEND` action, opens a `FilePickerDialog` to select a destination for the file, and saves the file to the chosen location. It notifies the user of the success or failure of the operation. If the intent does not match the required criteria, it displays an error toast and finishes the activity.",
+            "transfer": []
+        },
+        {
+            "name": "com.simplemobiletools.filemanager.pro.activities.SettingsActivity",
+            "layouts": [
+                {
+                    "name": "activity_settings",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/settings_coordinator"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/settings_toolbar",
+                                "title": "@string/settings",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.core.widget.NestedScrollView",
+                                "id": "@+id/settings_nested_scrollview",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "LinearLayout",
+                                "id": "@+id/settings_holder",
+                                "orientation": "vertical"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_color_customization_section_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/color_customization"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.constraintlayout.widget.ConstraintLayout",
+                                "id": "@+id/settings_color_customization_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "opens a customization activity to modify app colors."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_color_customization_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/customize_colors",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_color_customization_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_general_settings_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/general_settings"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_use_english_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_use_english",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/use_english_language"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "toggles the app to use the English language and restarts the app."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_language_holder",
+                                "style": "@style/SettingsHolderTextViewStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "opens a dialog to change the app's language."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_language_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/language"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_language",
+                                "style": "@style/SettingsTextValueStyle",
+                                "layout_below": "@+id/settings_language_label",
+                                "text": "English"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_manage_favorites_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "opens the FavoritesActivity to manage favorite items."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_manage_favorites",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "Manage favorites"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_manage_tabs_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "opens a dialog to manage the visibility of UI tabs."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_manage_tabs",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/manage_shown_tabs"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_change_date_time_format_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "opens a dialog to change the date and time format."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_change_date_time_format",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/change_date_and_time_format"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_font_size_holder",
+                                "style": "@style/SettingsHolderTextViewStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "opens a dialog to select a new font size."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_font_size_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/font_size"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_font_size",
+                                "style": "@style/SettingsTextValueStyle",
+                                "layout_below": "@+id/settings_font_size_label",
+                                "text": "@string/medium"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_press_back_twice_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_press_back_twice",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Require pressing Back twice to leave the app"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "toggles the setting to require pressing the back button twice to exit the app."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_general_settings_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_visibility_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/visibility"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_show_hidden_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_show_hidden",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/show_hidden_items"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "toggles the visibility of hidden items, with optional password protection."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_visibility_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_scrolling_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/scrolling"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_enable_pull_to_refresh_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_enable_pull_to_refresh",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/enable_pull_to_refresh"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "toggles the pull-to-refresh feature in the app."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_scrolling_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_file_operations_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/file_operations"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_keep_last_modified_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_keep_last_modified",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/keep_last_modified"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "toggles the setting to preserve the last modified timestamp of files."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_skip_delete_confirmation_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_skip_delete_confirmation",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/skip_delete_confirmation"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "toggles the setting to skip the delete confirmation dialog."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_file_operations_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_security_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/security"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_password_protection_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_password_protection",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/password_protect_hidden_items"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "toggles password protection for hidden items."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_app_password_protection_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_app_password_protection",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/password_protect_whole_app"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "toggles password protection for the entire app."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_file_deletion_password_protection_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_file_deletion_password_protection",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/password_protect_file_deletion"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "toggles password protection for file deletion."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_enable_root_access_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_enable_root_access",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Enable root access"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "toggles root access for the app."
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_settings",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/settings_coordinator"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/settings_toolbar",
+                                "title": "@string/settings",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.core.widget.NestedScrollView",
+                                "id": "@+id/settings_nested_scrollview",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "LinearLayout",
+                                "id": "@+id/settings_holder",
+                                "orientation": "vertical"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_color_customization_section_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/color_customization"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.constraintlayout.widget.ConstraintLayout",
+                                "id": "@+id/settings_color_customization_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "opens a customization activity to modify app colors."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_color_customization_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/customize_colors",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_color_customization_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_general_settings_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/general_settings"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_use_english_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_use_english",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/use_english_language"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "toggles the app to use the English language and restarts the app."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_language_holder",
+                                "style": "@style/SettingsHolderTextViewStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "opens a dialog to change the app's language."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_language_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/language"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_language",
+                                "style": "@style/SettingsTextValueStyle",
+                                "layout_below": "@+id/settings_language_label",
+                                "text": "English"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_manage_favorites_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "opens the FavoritesActivity to manage favorite items."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_manage_favorites",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "Manage favorites"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_manage_tabs_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "opens a dialog to manage the visibility of UI tabs."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_manage_tabs",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/manage_shown_tabs"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_change_date_time_format_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "opens a dialog to change the date and time format."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_change_date_time_format",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/change_date_and_time_format"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_font_size_holder",
+                                "style": "@style/SettingsHolderTextViewStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "opens a dialog to select a new font size."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_font_size_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/font_size"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_font_size",
+                                "style": "@style/SettingsTextValueStyle",
+                                "layout_below": "@+id/settings_font_size_label",
+                                "text": "@string/medium"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_press_back_twice_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_press_back_twice",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Require pressing Back twice to leave the app"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "toggles the setting to require pressing the back button twice to exit the app."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_general_settings_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_visibility_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/visibility"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_show_hidden_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_show_hidden",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/show_hidden_items"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "toggles the visibility of hidden items, with optional password protection."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_visibility_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_scrolling_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/scrolling"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_enable_pull_to_refresh_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_enable_pull_to_refresh",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/enable_pull_to_refresh"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "toggles the pull-to-refresh feature in the app."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_scrolling_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_file_operations_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/file_operations"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_keep_last_modified_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_keep_last_modified",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/keep_last_modified"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "toggles the setting to preserve the last modified timestamp of files."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_skip_delete_confirmation_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_skip_delete_confirmation",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/skip_delete_confirmation"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "toggles the setting to skip the delete confirmation dialog."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_file_operations_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_security_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/security"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_password_protection_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_password_protection",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/password_protect_hidden_items"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "toggles password protection for hidden items."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_app_password_protection_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_app_password_protection",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/password_protect_whole_app"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "toggles password protection for the entire app."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_file_deletion_password_protection_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_file_deletion_password_protection",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/password_protect_file_deletion"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "toggles password protection for file deletion."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_enable_root_access_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_enable_root_access",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Enable root access"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "toggles root access for the app."
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [
+                {
+                    "name": "ItemsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "MyViewPagerFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "RecentsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "StorageFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [
+                {
+                    "name": "ManageVisibleTabsDialog",
+                    "layouts": [],
+                    "elements": []
+                }
+            ],
+            "elements": [],
+            "summary": "The SettingsActivity is responsible for managing various app settings, including color customization, language preferences, security features (like password protection), file operations, and UI behaviors (like font size and pull-to-refresh). It provides a centralized interface for users to configure the app according to their preferences.",
+            "transfer": [
+                "FavoritesActivity",
+                "CustomizationActivity"
+            ]
+        },
+        {
+            "name": "com.simplemobiletools.filemanager.pro.activities.FavoritesActivity",
+            "layouts": [
+                {
+                    "name": "activity_favorites",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/manage_favorites_coordinator"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "serves as the root container for the activity's UI elements, organizing them in a coordinated layout."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/manage_favorites_toolbar",
+                                "menu": "@menu/menu_favorites",
+                                "title": "Manage favorites",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "display",
+                                "effect": "provides a toolbar with a title 'Manage favorites' and a menu for managing favorites."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/manage_favorites_holder",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "acts as a container for the main content of the activity, ensuring it fills the viewport without scrollbars."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyRecyclerView",
+                                "id": "@+id/manage_favorites_list",
+                                "clipToPadding": "false",
+                                "layoutManager": "com.simplemobiletools.commons.views.MyLinearLayoutManager",
+                                "itemCount": "4",
+                                "listitem": "@layout/item_manage_favorite"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "display",
+                                "effect": "displays a list of favorites using a RecyclerView, allowing users to view and manage their favorite items."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/manage_favorites_placeholder",
+                                "layout_centerHorizontal": "true",
+                                "layout_marginBottom": "@dimen/small_margin",
+                                "alpha": "0.8",
+                                "lineSpacingExtra": "@dimen/tiny_margin",
+                                "text": "You can add frequently used folders to favorites for easy access from anywhere.",
+                                "textSize": "@dimen/bigger_text_size",
+                                "textStyle": "italic",
+                                "visibility": "gone"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "display",
+                                "effect": "shows a placeholder message when the favorites list is empty, informing users how to add favorites."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/manage_favorites_placeholder_2",
+                                "layout_below": "@+id/manage_favorites_placeholder",
+                                "layout_centerHorizontal": "true",
+                                "text": "@string/add_favorites",
+                                "textSize": "@dimen/bigger_text_size",
+                                "visibility": "gone"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "display",
+                                "effect": "provides a secondary placeholder text that prompts users to add favorites, displayed below the primary placeholder."
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_favorites",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/manage_favorites_coordinator"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "serves as the root container for the activity's UI elements, organizing them in a coordinated layout."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/manage_favorites_toolbar",
+                                "menu": "@menu/menu_favorites",
+                                "title": "Manage favorites",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "display",
+                                "effect": "provides a toolbar with a title 'Manage favorites' and a menu for managing favorites."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/manage_favorites_holder",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "acts as a container for the main content of the activity, ensuring it fills the viewport without scrollbars."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyRecyclerView",
+                                "id": "@+id/manage_favorites_list",
+                                "clipToPadding": "false",
+                                "layoutManager": "com.simplemobiletools.commons.views.MyLinearLayoutManager",
+                                "itemCount": "4",
+                                "listitem": "@layout/item_manage_favorite"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "display",
+                                "effect": "displays a list of favorites using a RecyclerView, allowing users to view and manage their favorite items."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/manage_favorites_placeholder",
+                                "layout_centerHorizontal": "true",
+                                "layout_marginBottom": "@dimen/small_margin",
+                                "alpha": "0.8",
+                                "lineSpacingExtra": "@dimen/tiny_margin",
+                                "text": "You can add frequently used folders to favorites for easy access from anywhere.",
+                                "textSize": "@dimen/bigger_text_size",
+                                "textStyle": "italic",
+                                "visibility": "gone"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "display",
+                                "effect": "shows a placeholder message when the favorites list is empty, informing users how to add favorites."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/manage_favorites_placeholder_2",
+                                "layout_below": "@+id/manage_favorites_placeholder",
+                                "layout_centerHorizontal": "true",
+                                "text": "@string/add_favorites",
+                                "textSize": "@dimen/bigger_text_size",
+                                "visibility": "gone"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "display",
+                                "effect": "provides a secondary placeholder text that prompts users to add favorites, displayed below the primary placeholder."
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.options_menu",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [
+                {
+                    "name": "ItemsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "MyViewPagerFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "RecentsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "StorageFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [],
+            "elements": [],
+            "summary": "The FavoritesActivity allows users to manage their favorite files and directories. Users can add new favorites by selecting files or directories through a FilePickerDialog. The activity updates the UI to reflect changes in the favorites list, including displaying a placeholder message when the list is empty. It also provides a toolbar with options to manage favorites and navigation.",
+            "transfer": []
+        },
+        {
+            "name": "com.simplemobiletools.commons.activities.AboutActivity",
+            "layouts": [],
+            "fragments": [],
+            "dialogs": [],
+            "elements": [],
+            "summary": "This activity is used to display information about the app, including version details, developer credits, and links to related resources.",
+            "transfer": []
+        },
+        {
+            "name": "com.simplemobiletools.commons.activities.CustomizationActivity",
+            "layouts": [],
+            "fragments": [],
+            "dialogs": [],
+            "elements": [],
+            "summary": "This activity is used for customizing various settings and preferences in the application, such as themes, colors, and other user interface elements.",
+            "transfer": []
+        }
+    ],
+    "activities_name": [
+        "SplashActivity",
+        "MainActivity",
+        "MimeTypesActivity",
+        "ReadTextActivity",
+        "PDFViewerActivity",
+        "DecompressActivity",
+        "SaveAsActivity",
+        "SettingsActivity",
+        "FavoritesActivity",
+        "AboutActivity",
+        "CustomizationActivity"
+    ]
+}

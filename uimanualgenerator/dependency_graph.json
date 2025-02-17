@@ -1,0 +1,145 @@
+{
+    "class_graph": {
+        "com.simplemobiletools.applauncher.activities.MainActivity": [
+            "com.simplemobiletools.applauncher.activities.SimpleActivity"
+        ],
+        "com.simplemobiletools.applauncher.activities.SettingsActivity": [
+            "com.simplemobiletools.applauncher.activities.SimpleActivity"
+        ]
+    },
+    "method_graph": {
+        "com.simplemobiletools.applauncher.activities.MainActivity.onCreate": [
+            "com.simplemobiletools.applauncher.activities.MainActivity.setupOptionsMenu",
+            "com.simplemobiletools.applauncher.activities.MainActivity.refreshMenuItems",
+            "com.simplemobiletools.applauncher.activities.MainActivity.setupEmptyView",
+            "com.simplemobiletools.applauncher.activities.MainActivity.setupLaunchers",
+            "com.simplemobiletools.applauncher.activities.MainActivity.checkWhatsNewDialog",
+            "com.simplemobiletools.applauncher.activities.MainActivity.storeStateVariables",
+            "com.simplemobiletools.applauncher.activities.MainActivity.setupGridLayoutManager",
+            "com.simplemobiletools.applauncher.activities.MainActivity.fabClicked"
+        ],
+        "com.simplemobiletools.applauncher.activities.MainActivity.onResume": [
+            "com.simplemobiletools.applauncher.activities.MainActivity.updateMenuColors",
+            "com.simplemobiletools.applauncher.activities.MainActivity.getGridAdapter"
+        ],
+        "com.simplemobiletools.applauncher.activities.MainActivity.onPause": [
+            "com.simplemobiletools.applauncher.activities.MainActivity.storeStateVariables"
+        ],
+        "com.simplemobiletools.applauncher.activities.MainActivity.setupOptionsMenu": [
+            "com.simplemobiletools.applauncher.activities.MainActivity.searchTextChanged",
+            "com.simplemobiletools.applauncher.activities.MainActivity.showSortingDialog",
+            "com.simplemobiletools.applauncher.activities.MainActivity.toggleAppName",
+            "com.simplemobiletools.applauncher.activities.MainActivity.changeColumnCount",
+            "com.simplemobiletools.applauncher.activities.MainActivity.launchSettings",
+            "com.simplemobiletools.applauncher.activities.MainActivity.launchAbout"
+        ],
+        "com.simplemobiletools.applauncher.activities.MainActivity.searchTextChanged": [
+            "com.simplemobiletools.applauncher.activities.MainActivity.setupAdapter"
+        ],
+        "com.simplemobiletools.applauncher.activities.MainActivity.setupLaunchers": [
+            "com.simplemobiletools.applauncher.activities.MainActivity.checkInvalidApps",
+            "com.simplemobiletools.applauncher.activities.MainActivity.initZoomListener",
+            "com.simplemobiletools.applauncher.activities.MainActivity.setupAdapter"
+        ],
+        "com.simplemobiletools.applauncher.activities.MainActivity.setupAdapter": [
+            "com.simplemobiletools.applauncher.activities.MainActivity.maybeShowEmptyView"
+        ],
+        "com.simplemobiletools.applauncher.activities.MainActivity.showSortingDialog": [
+            "com.simplemobiletools.applauncher.activities.MainActivity.setupAdapter"
+        ],
+        "com.simplemobiletools.applauncher.activities.MainActivity.toggleAppName": [
+            "com.simplemobiletools.applauncher.activities.MainActivity.setupAdapter"
+        ],
+        "com.simplemobiletools.applauncher.activities.MainActivity.changeColumnCount": [
+            "com.simplemobiletools.applauncher.activities.MainActivity.columnCountChanged"
+        ],
+        "com.simplemobiletools.applauncher.activities.MainActivity.increaseColumnCount": [
+            "com.simplemobiletools.applauncher.activities.MainActivity.columnCountChanged"
+        ],
+        "com.simplemobiletools.applauncher.activities.MainActivity.reduceColumnCount": [
+            "com.simplemobiletools.applauncher.activities.MainActivity.columnCountChanged"
+        ],
+        "com.simplemobiletools.applauncher.activities.MainActivity.columnCountChanged": [
+            "com.simplemobiletools.applauncher.activities.MainActivity.refreshMenuItems",
+            "com.simplemobiletools.applauncher.activities.MainActivity.getGridAdapter"
+        ],
+        "com.simplemobiletools.applauncher.activities.MainActivity.zoomIn": [
+            "com.simplemobiletools.applauncher.activities.MainActivity.reduceColumnCount",
+            "com.simplemobiletools.applauncher.activities.MainActivity.getGridAdapter"
+        ],
+        "com.simplemobiletools.applauncher.activities.MainActivity.zoomOut": [
+            "com.simplemobiletools.applauncher.activities.MainActivity.increaseColumnCount",
+            "com.simplemobiletools.applauncher.activities.MainActivity.getGridAdapter"
+        ],
+        "com.simplemobiletools.applauncher.activities.MainActivity.refreshItems": [
+            "com.simplemobiletools.applauncher.activities.MainActivity.setupLaunchers"
+        ],
+        "com.simplemobiletools.applauncher.activities.MainActivity.fabClicked": [
+            "com.simplemobiletools.applauncher.activities.MainActivity.setupLaunchers"
+        ],
+        "com.simplemobiletools.applauncher.activities.MainActivity.setupEmptyView": [
+            "com.simplemobiletools.applauncher.activities.MainActivity.fabClicked"
+        ],
+        "com.simplemobiletools.applauncher.activities.MainActivity.maybeShowEmptyView": [
+            "com.simplemobiletools.applauncher.activities.MainActivity.getGridAdapter"
+        ],
+        "com.simplemobiletools.applauncher.activities.SettingsActivity.onResume": [
+            "com.simplemobiletools.applauncher.activities.SettingsActivity.setupPurchaseThankYou",
+            "com.simplemobiletools.applauncher.activities.SettingsActivity.setupCustomizeColors",
+            "com.simplemobiletools.applauncher.activities.SettingsActivity.setupUseEnglish",
+            "com.simplemobiletools.applauncher.activities.SettingsActivity.setupLanguage",
+            "com.simplemobiletools.applauncher.activities.SettingsActivity.setupCloseApp"
+        ],
+        "com.simplemobiletools.applauncher.adapters.AddLaunchersAdapter.bindView": [
+            "com.simplemobiletools.applauncher.adapters.AddLaunchersAdapter.isKeySelected",
+            "com.simplemobiletools.applauncher.adapters.AddLaunchersAdapter.viewClicked"
+        ],
+        "com.simplemobiletools.applauncher.adapters.AddLaunchersAdapter.viewClicked": [
+            "com.simplemobiletools.applauncher.adapters.AddLaunchersAdapter.toggleItemSelection"
+        ],
+        "com.simplemobiletools.applauncher.adapters.LaunchersAdapter.": [
+            "com.simplemobiletools.applauncher.adapters.LaunchersAdapter.calculateIconWidth"
+        ],
+        "com.simplemobiletools.applauncher.adapters.LaunchersAdapter.actionItemPressed": [
+            "com.simplemobiletools.applauncher.adapters.LaunchersAdapter.changeOrder",
+            "com.simplemobiletools.applauncher.adapters.LaunchersAdapter.showEditDialog",
+            "com.simplemobiletools.applauncher.adapters.LaunchersAdapter.tryRemoveLauncher"
+        ],
+        "com.simplemobiletools.applauncher.adapters.LaunchersAdapter.onBindViewHolder": [
+            "com.simplemobiletools.applauncher.adapters.LaunchersAdapter.setupView"
+        ],
+        "com.simplemobiletools.applauncher.adapters.LaunchersAdapter.showEditDialog": [
+            "com.simplemobiletools.applauncher.adapters.LaunchersAdapter.getItemWithKey"
+        ],
+        "com.simplemobiletools.applauncher.adapters.LaunchersAdapter.tryRemoveLauncher": [
+            "com.simplemobiletools.applauncher.adapters.LaunchersAdapter.removeItems",
+            "com.simplemobiletools.applauncher.adapters.LaunchersAdapter.askConfirmRemove"
+        ],
+        "com.simplemobiletools.applauncher.adapters.LaunchersAdapter.askConfirmRemove": [
+            "com.simplemobiletools.applauncher.adapters.LaunchersAdapter.removeItems"
+        ],
+        "com.simplemobiletools.applauncher.adapters.LaunchersAdapter.removeItems": [
+            "com.simplemobiletools.applauncher.adapters.LaunchersAdapter.getItemWithKey"
+        ],
+        "com.simplemobiletools.applauncher.dialogs.AddLaunchersDialog.": [
+            "com.simplemobiletools.applauncher.dialogs.AddLaunchersDialog.confirmSelection"
+        ],
+        "com.simplemobiletools.applauncher.dialogs.ChangeSortingDialog.": [
+            "com.simplemobiletools.applauncher.dialogs.ChangeSortingDialog.dialogConfirmed",
+            "com.simplemobiletools.applauncher.dialogs.ChangeSortingDialog.setupSortRadio",
+            "com.simplemobiletools.applauncher.dialogs.ChangeSortingDialog.setupOrderRadio"
+        ],
+        "com.simplemobiletools.applauncher.helpers.DBHelper.onUpgrade": [
+            "com.simplemobiletools.applauncher.helpers.DBHelper.addAppLauncher"
+        ],
+        "com.simplemobiletools.applauncher.helpers.DBHelper.addAppLauncher": [
+            "com.simplemobiletools.applauncher.helpers.DBHelper.insertAppLauncher"
+        ],
+        "com.simplemobiletools.applauncher.helpers.DBHelper.insertAppLauncher": [
+            "com.simplemobiletools.applauncher.helpers.DBHelper.fillAppLauncherValues"
+        ],
+        "com.simplemobiletools.applauncher.helpers.DBHelper.getLaunchers": [
+            "com.simplemobiletools.applauncher.helpers.DBHelper.deleteLaunchers"
+        ]
+    }
+}

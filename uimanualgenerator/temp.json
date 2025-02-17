@@ -1,0 +1,150 @@
+
+
+    "activitySummary": "The SettingsActivity allows users to configure various settings for the app, including favorites management, UI customization, security options, file operations, and more.",
+    "elementSummaries": [
+        {
+            "layoutname": "settings_activity",
+            "element_id": "@+id/settings_coordinator",
+            "functionDescription": {
+                "action": "N/A",
+                "effect": "The root CoordinatorLayout that serves as the container for all UI components."
+            }
+        },
+        {
+            "layoutname": "settings_activity",
+            "element_id": "@+id/settings_toolbar",
+            "functionDescription": {
+                "action": "click",
+                "effect": "Navigates back to the previous activity."
+            }
+        },
+        {
+            "layoutname": "settings_activity",
+            "element_id": "@+id/settings_nested_scrollview",
+            "functionDescription": {
+                "action": "scroll",
+                "effect": "Scrolls through the nested scroll view containing various settings options."
+            }
+        },
+        {
+            "layoutname": "settings_activity",
+            "element_id": "@+id/settings_holder",
+            "functionDescription": {
+                "action": "N/A",
+                "effect": "The vertical LinearLayout that holds all the settings sections."
+            }
+        },
+        {
+            "layoutname": "settings_activity",
+            "element_id": "@+id/settings_color_customization_section_label",
+            "functionDescription": {
+                "action": "click",
+                "effect": "Accesses the color customization settings."
+            }
+        },
+        {
+            "layoutname": "settings_activity",
+            "element_id": "@+id/settings_color_customization_label",
+            "functionDescription": {
+                "action": "click",
+                "effect": "Customizes the app colors."
+            }
+        },
+        {
+            "layoutname": "settings_activity",
+            "element_id": "@+id/settings_general_settings_label",
+            "functionDescription": {
+                "action": "click",
+                "effect": "Accesses the general settings section."
+            }
+        },
+        {
+            "layoutname": "settings_activity",
+            "element_id": "@+id/settings_use_english",
+            "functionDescription": {
+                "action": "toggle",
+                "effect": "Toggles the English language usage in the app."
+            }
+        },
+        {
+            "layoutname": "settings_activity",
+            "element_id": "@+id/settings_language",
+            "functionDescription": {
+                "action": "click",
+                "effect": "Changes the app language."
+            }
+        },
+        {
+            "layoutname": "settings_activity",
+            "element_id": "@+id/settings_change_date_time_format",
+            "functionDescription": {
+                "action": "click",
+                "effect": "Opens a dialog to change the date and time format."
+            }
+        },
+        {
+            "layoutname": "settings_activity",
+            "element_id": "@+id/settings_file_loading_priority",
+            "functionDescription": {
+                "action": "click",
+                "effect": "Sets the file loading priority."
+            }
+        },
+        {
+            "layoutname": "settings_activity",
+            "element_id": "@+id/settings_manage_included_folders",
+            "functionDescription": {
+                "action": "click",
+                "effect": "Manages included folders."
+            }
+        },
+        {
+            "layoutname": "settings_activity",
+            "element_id": "@+id/settings_manage_excluded_folders",
+            "functionDescription": {
+                "action": "click",
+                "effect": "Manages excluded folders."
+            }
+        },
+        {
+            "layoutname": "settings_activity",
+            "element_id": "@+id/settings_manage_hidden_folders",
+            "functionDescription": {
+                "action": "click",
+                "effect": "Manages hidden folders."
+            }
+        },
+        {
+            "layoutname": "settings_activity",
+            "element_id": "@+id/settings_show_hidden_items",
+            "functionDescription": {
+                "action": "toggle",
+                "effect": "Toggles the visibility of hidden items."
+            }
+        },
+        {
+            "layoutname": "settings_activity",
+            "element_id": "@+id/settings_search_all_files",
+            "functionDescription": {
+                "action": "toggle",
+                "effect": "Toggles the search for all files instead of folders."
+            }
+        },
+        {
+            "layoutname": "settings_activity",
+            "element_id": "@+id/settings_videos_label",
+            "functionDescription": {
+                "action": "click",
+                "effect": "Accesses the video settings section."
+            }
+        },
+        {
+            "layoutname": "settings_activity",
+            "element_id": "@+id/settings_autoplay_videos",
+            "functionDescription": {
+                "action": "toggle",
+                "effect": "Toggles the autoplay of videos."
+            }
+        },
+        {
+            "layout

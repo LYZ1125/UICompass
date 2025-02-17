@@ -1,0 +1,3482 @@
+{
+    "activities": [
+        {
+            "name": "com.simplemobiletools.musicplayer.activities.SplashActivity",
+            "layouts": [],
+            "fragments": [],
+            "dialogs": [],
+            "elements": [],
+            "summary": "The `SplashActivity` is designed to serve as a transitional screen that initializes quickly and then redirects the user to the main `MainActivity`. It is commonly used for brand or logo display before the application's main interface is loaded.",
+            "transfer": [
+                "MainActivity"
+            ]
+        },
+        {
+            "name": "com.simplemobiletools.musicplayer.activities.MainActivity",
+            "layouts": [
+                {
+                    "name": "R.menu.main_menu",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_main",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/main_coordinator"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "parent layout",
+                                "effect": "coordinates the layout of the main activity"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MySearchMenu",
+                                "id": "@+id/main_menu"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "opens the main menu with various options"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/main_nested_scrollview",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "nested scroll view",
+                                "effect": "provides scrollable content within the main activity"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.constraintlayout.widget.ConstraintLayout",
+                                "id": "@+id/main_holder"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "parent layout",
+                                "effect": "coordinates the layout of the main content within the activity"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.progressindicator.LinearProgressIndicator",
+                                "id": "@+id/loading_progress_bar",
+                                "layout_alignParentTop": "true",
+                                "indeterminate": "true",
+                                "visibility": "visible",
+                                "hideAnimationBehavior": "outward",
+                                "layout_constraintEnd_toEndOf": "parent",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toTopOf": "parent",
+                                "showAnimationBehavior": "inward",
+                                "showDelay": "250"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "progress indicator",
+                                "effect": "indicates loading or progress state"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyViewPager",
+                                "id": "@+id/view_pager",
+                                "layout_constraintBottom_toTopOf": "@+id/current_track_bar",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "view pager",
+                                "effect": "manages multiple fragments or views as pages that can be swiped through"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/current_track_bar",
+                                "layout": "@layout/view_current_track_bar",
+                                "layout_constraintBottom_toTopOf": "@+id/main_tabs_holder"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "include layout",
+                                "effect": "displays current track information"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.tabs.TabLayout",
+                                "id": "@+id/main_tabs_holder",
+                                "layout_constraintBottom_toBottomOf": "parent",
+                                "tabIndicator": "@null",
+                                "tabMinWidth": "150dp",
+                                "tabRippleColor": "@null"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "tab layout",
+                                "effect": "allows navigation between different sections of the app"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.constraintlayout.widget.ConstraintLayout",
+                                "id": "@+id/sleep_timer_holder",
+                                "clickable": "true",
+                                "visibility": "visible",
+                                "layout_constraintBottom_toTopOf": "@+id/current_track_bar",
+                                "layout_constraintEnd_toEndOf": "parent"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "displays a sleep timer dialog"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/sleep_timer_divider_top",
+                                "layout_constraintBottom_toTopOf": "@+id/sleep_timer_stop",
+                                "layout_constraintEnd_toEndOf": "@+id/sleep_timer_stop",
+                                "layout_constraintStart_toStartOf": "@+id/sleep_timer_label"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "image view",
+                                "effect": "visual separator for the sleep timer elements"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/sleep_timer_divider_start",
+                                "layout_constraintBottom_toBottomOf": "@+id/sleep_timer_stop",
+                                "layout_constraintStart_toStartOf": "@+id/sleep_timer_label",
+                                "layout_constraintTop_toTopOf": "@+id/sleep_timer_stop"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "image view",
+                                "effect": "visual separator for the sleep timer elements"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/sleep_timer_label",
+                                "layout_centerVertical": "true",
+                                "text": "@string/sleep_timer",
+                                "textSize": "@dimen/big_text_size",
+                                "layout_constraintBottom_toBottomOf": "@+id/sleep_timer_stop",
+                                "layout_constraintEnd_toStartOf": "@+id/sleep_timer_value",
+                                "layout_constraintTop_toTopOf": "@+id/sleep_timer_stop"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "text view",
+                                "effect": "displays the label 'Sleep Timer'"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/sleep_timer_value",
+                                "text": "00:00",
+                                "textSize": "@dimen/big_text_size",
+                                "layout_constraintBottom_toBottomOf": "@+id/sleep_timer_stop",
+                                "layout_constraintEnd_toStartOf": "@+id/sleep_timer_stop",
+                                "layout_constraintTop_toTopOf": "@+id/sleep_timer_stop",
+                                "ignore": "HardcodedText"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "text view",
+                                "effect": "displays the duration of the sleep timer"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/sleep_timer_stop",
+                                "layout_marginStart": "@dimen/tiny_margin",
+                                "layout_marginEnd": "@dimen/tiny_margin",
+                                "layout_constraintBottom_toBottomOf": "parent",
+                                "layout_constraintEnd_toEndOf": "parent"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "stops the sleep timer"
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": [
+                        {
+                            "name": "",
+                            "elements": [
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "com.simplemobiletools.musicplayer.views.CurrentTrackBar",
+                                        "id": "@+id/current_track_bar",
+                                        "layout_alignParentBottom": "true",
+                                        "visibility": "visible"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "ImageView",
+                                        "id": "@+id/current_track_divider",
+                                        "importantForAccessibility": "no"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "ImageView",
+                                        "id": "@+id/current_track_image",
+                                        "layout_marginStart": "@dimen/normal_margin",
+                                        "layout_marginEnd": "@dimen/normal_margin",
+                                        "layout_marginBottom": "@dimen/normal_margin"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "com.simplemobiletools.musicplayer.views.MarqueeTextView",
+                                        "id": "@+id/current_track_label",
+                                        "layout_alignTop": "@+id/current_track_image",
+                                        "layout_alignBottom": "@+id/current_track_image",
+                                        "layout_toStartOf": "@+id/current_track_play_pause",
+                                        "layout_toEndOf": "@+id/current_track_image",
+                                        "textSize": "@dimen/bigger_text_size",
+                                        "text": "My Track"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "com.airbnb.lottie.LottieAnimationView",
+                                        "id": "@+id/current_track_play_pause",
+                                        "layout_alignTop": "@+id/current_track_image",
+                                        "layout_alignBottom": "@+id/current_track_image",
+                                        "layout_alignParentEnd": "true",
+                                        "layout_marginEnd": "@dimen/normal_margin",
+                                        "scaleType": "fitCenter",
+                                        "lottie_autoPlay": "false",
+                                        "lottie_loop": "false",
+                                        "lottie_rawRes": "@raw/playpause"
+                                    },
+                                    "dynamic_properties": []
+                                }
+                            ],
+                            "type": "dependency",
+                            "dependencies": []
+                        }
+                    ]
+                },
+                {
+                    "name": "commons.R.layout.bottom_tablayout_item",
+                    "elements": [],
+                    "type": "",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.options_menu",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_main",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/main_coordinator"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "parent layout",
+                                "effect": "coordinates the layout of the main activity"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MySearchMenu",
+                                "id": "@+id/main_menu"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "opens the main menu with various options"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/main_nested_scrollview",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "nested scroll view",
+                                "effect": "provides scrollable content within the main activity"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.constraintlayout.widget.ConstraintLayout",
+                                "id": "@+id/main_holder"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "parent layout",
+                                "effect": "coordinates the layout of the main content within the activity"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.progressindicator.LinearProgressIndicator",
+                                "id": "@+id/loading_progress_bar",
+                                "layout_alignParentTop": "true",
+                                "indeterminate": "true",
+                                "visibility": "visible",
+                                "hideAnimationBehavior": "outward",
+                                "layout_constraintEnd_toEndOf": "parent",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toTopOf": "parent",
+                                "showAnimationBehavior": "inward",
+                                "showDelay": "250"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "progress indicator",
+                                "effect": "indicates loading or progress state"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyViewPager",
+                                "id": "@+id/view_pager",
+                                "layout_constraintBottom_toTopOf": "@+id/current_track_bar",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "view pager",
+                                "effect": "manages multiple fragments or views as pages that can be swiped through"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/current_track_bar",
+                                "layout": "@layout/view_current_track_bar",
+                                "layout_constraintBottom_toTopOf": "@+id/main_tabs_holder"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "include layout",
+                                "effect": "displays current track information"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.tabs.TabLayout",
+                                "id": "@+id/main_tabs_holder",
+                                "layout_constraintBottom_toBottomOf": "parent",
+                                "tabIndicator": "@null",
+                                "tabMinWidth": "150dp",
+                                "tabRippleColor": "@null"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "tab layout",
+                                "effect": "allows navigation between different sections of the app"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.constraintlayout.widget.ConstraintLayout",
+                                "id": "@+id/sleep_timer_holder",
+                                "clickable": "true",
+                                "visibility": "visible",
+                                "layout_constraintBottom_toTopOf": "@+id/current_track_bar",
+                                "layout_constraintEnd_toEndOf": "parent"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "displays a sleep timer dialog"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/sleep_timer_divider_top",
+                                "layout_constraintBottom_toTopOf": "@+id/sleep_timer_stop",
+                                "layout_constraintEnd_toEndOf": "@+id/sleep_timer_stop",
+                                "layout_constraintStart_toStartOf": "@+id/sleep_timer_label"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "image view",
+                                "effect": "visual separator for the sleep timer elements"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/sleep_timer_divider_start",
+                                "layout_constraintBottom_toBottomOf": "@+id/sleep_timer_stop",
+                                "layout_constraintStart_toStartOf": "@+id/sleep_timer_label",
+                                "layout_constraintTop_toTopOf": "@+id/sleep_timer_stop"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "image view",
+                                "effect": "visual separator for the sleep timer elements"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/sleep_timer_label",
+                                "layout_centerVertical": "true",
+                                "text": "@string/sleep_timer",
+                                "textSize": "@dimen/big_text_size",
+                                "layout_constraintBottom_toBottomOf": "@+id/sleep_timer_stop",
+                                "layout_constraintEnd_toStartOf": "@+id/sleep_timer_value",
+                                "layout_constraintTop_toTopOf": "@+id/sleep_timer_stop"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "text view",
+                                "effect": "displays the label 'Sleep Timer'"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/sleep_timer_value",
+                                "text": "00:00",
+                                "textSize": "@dimen/big_text_size",
+                                "layout_constraintBottom_toBottomOf": "@+id/sleep_timer_stop",
+                                "layout_constraintEnd_toStartOf": "@+id/sleep_timer_stop",
+                                "layout_constraintTop_toTopOf": "@+id/sleep_timer_stop",
+                                "ignore": "HardcodedText"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "text view",
+                                "effect": "displays the duration of the sleep timer"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/sleep_timer_stop",
+                                "layout_marginStart": "@dimen/tiny_margin",
+                                "layout_marginEnd": "@dimen/tiny_margin",
+                                "layout_constraintBottom_toBottomOf": "parent",
+                                "layout_constraintEnd_toEndOf": "parent"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "stops the sleep timer"
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": [
+                        {
+                            "name": "",
+                            "elements": [
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "com.simplemobiletools.musicplayer.views.CurrentTrackBar",
+                                        "id": "@+id/current_track_bar",
+                                        "layout_alignParentBottom": "true",
+                                        "visibility": "visible"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "ImageView",
+                                        "id": "@+id/current_track_divider",
+                                        "importantForAccessibility": "no"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "ImageView",
+                                        "id": "@+id/current_track_image",
+                                        "layout_marginStart": "@dimen/normal_margin",
+                                        "layout_marginEnd": "@dimen/normal_margin",
+                                        "layout_marginBottom": "@dimen/normal_margin"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "com.simplemobiletools.musicplayer.views.MarqueeTextView",
+                                        "id": "@+id/current_track_label",
+                                        "layout_alignTop": "@+id/current_track_image",
+                                        "layout_alignBottom": "@+id/current_track_image",
+                                        "layout_toStartOf": "@+id/current_track_play_pause",
+                                        "layout_toEndOf": "@+id/current_track_image",
+                                        "textSize": "@dimen/bigger_text_size",
+                                        "text": "My Track"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "com.airbnb.lottie.LottieAnimationView",
+                                        "id": "@+id/current_track_play_pause",
+                                        "layout_alignTop": "@+id/current_track_image",
+                                        "layout_alignBottom": "@+id/current_track_image",
+                                        "layout_alignParentEnd": "true",
+                                        "layout_marginEnd": "@dimen/normal_margin",
+                                        "scaleType": "fitCenter",
+                                        "lottie_autoPlay": "false",
+                                        "lottie_loop": "false",
+                                        "lottie_rawRes": "@raw/playpause"
+                                    },
+                                    "dynamic_properties": []
+                                }
+                            ],
+                            "type": "dependency",
+                            "dependencies": []
+                        }
+                    ]
+                },
+                {
+                    "name": "R.menu.menu_main",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [
+                {
+                    "name": "PlaylistsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "TracksFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [],
+            "elements": [],
+            "summary": "The MainActivity is the central hub of the music player application, handling user interactions such as displaying the main interface, managing playlists, and accessing additional features like settings and equalizer.",
+            "transfer": [
+                "AboutActivity",
+                "EqualizerActivity",
+                "SettingsActivity"
+            ]
+        },
+        {
+            "name": "com.simplemobiletools.musicplayer.activities.WidgetConfigureActivity",
+            "layouts": [
+                {
+                    "name": "binding.root",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "widget_config",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/config_coordinator"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/config_relative",
+                                "layout_centerHorizontal": "true",
+                                "layout_margin": "@dimen/activity_margin"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/config_player",
+                                "layout": "@layout/widget",
+                                "layout_marginBottom": "@dimen/activity_margin"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/config_bg_color",
+                                "layout_above": "@+id/config_text_color",
+                                "layout_margin": "@dimen/tiny_margin"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/config_bg_seekbar_holder",
+                                "layout_alignTop": "@+id/config_bg_color",
+                                "layout_alignBottom": "@+id/config_bg_color",
+                                "layout_marginStart": "@dimen/medium_margin",
+                                "layout_toEndOf": "@+id/config_bg_color"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MySeekBar",
+                                "id": "@+id/config_bg_seekbar",
+                                "layout_centerVertical": "true"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/config_text_color",
+                                "layout_alignParentBottom": "true",
+                                "layout_margin": "@dimen/tiny_margin"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "Button",
+                                "id": "@+id/config_save",
+                                "style": "@style/MyWidgetConfigSaveStyle",
+                                "layout_alignParentEnd": "true",
+                                "layout_alignParentBottom": "true",
+                                "text": "@string/ok"
+                            },
+                            "dynamic_properties": []
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": [
+                        {
+                            "name": "",
+                            "elements": [
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "RelativeLayout",
+                                        "id": "@+id/widget_holder"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "ImageView",
+                                        "id": "@+id/widget_background",
+                                        "layout_alignBottom": "@+id/widget_controls",
+                                        "layout_alignParentStart": "true",
+                                        "layout_alignParentTop": "true",
+                                        "layout_alignParentEnd": "true"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "RelativeLayout",
+                                        "id": "@+id/song_info_holder"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "TextView",
+                                        "id": "@+id/song_info_title",
+                                        "layout_marginStart": "@dimen/activity_margin",
+                                        "layout_marginEnd": "@dimen/activity_margin",
+                                        "ellipsize": "end",
+                                        "lines": "1",
+                                        "textColor": "@android:color/white",
+                                        "textSize": "@dimen/big_text_size",
+                                        "text": "@string/title"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "TextView",
+                                        "id": "@+id/song_info_artist",
+                                        "layout_below": "@+id/song_info_title",
+                                        "layout_marginStart": "@dimen/activity_margin",
+                                        "layout_marginEnd": "@dimen/activity_margin",
+                                        "ellipsize": "end",
+                                        "lines": "1",
+                                        "textColor": "@android:color/white",
+                                        "textSize": "@dimen/bigger_text_size",
+                                        "text": "@string/artist"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "include",
+                                        "id": "@+id/widget_controls",
+                                        "layout": "@layout/widget_controls",
+                                        "layout_below": "@+id/song_info_holder"
+                                    },
+                                    "dynamic_properties": []
+                                }
+                            ],
+                            "type": "dependency",
+                            "dependencies": []
+                        }
+                    ]
+                },
+                {
+                    "name": "widget",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/widget_holder"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "none",
+                                "effect": "acts as a container for the widget's content."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/widget_background",
+                                "layout_alignBottom": "@+id/widget_controls",
+                                "layout_alignParentStart": "true",
+                                "layout_alignParentTop": "true",
+                                "layout_alignParentEnd": "true"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "none",
+                                "effect": "displays the background of the widget."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/song_info_holder"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "none",
+                                "effect": "holds the song information elements."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/song_info_title",
+                                "layout_marginStart": "@dimen/activity_margin",
+                                "layout_marginEnd": "@dimen/activity_margin",
+                                "ellipsize": "end",
+                                "lines": "1",
+                                "textColor": "@android:color/white",
+                                "textSize": "@dimen/big_text_size",
+                                "text": "@string/title"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "none",
+                                "effect": "displays the title of the current song."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/song_info_artist",
+                                "layout_below": "@+id/song_info_title",
+                                "layout_marginStart": "@dimen/activity_margin",
+                                "layout_marginEnd": "@dimen/activity_margin",
+                                "ellipsize": "end",
+                                "lines": "1",
+                                "textColor": "@android:color/white",
+                                "textSize": "@dimen/bigger_text_size",
+                                "text": "@string/artist"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "none",
+                                "effect": "displays the artist of the current song."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/widget_controls",
+                                "layout": "@layout/widget_controls",
+                                "layout_below": "@+id/song_info_holder"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "none",
+                                "effect": "includes the control elements for the widget."
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": [
+                        {
+                            "name": "",
+                            "elements": [
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "LinearLayout",
+                                        "id": "@+id/main_controls",
+                                        "orientation": "horizontal"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "ImageView",
+                                        "id": "@+id/previous_btn"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "ImageView",
+                                        "id": "@+id/play_pause_btn"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "ImageView",
+                                        "id": "@+id/next_btn"
+                                    },
+                                    "dynamic_properties": []
+                                }
+                            ],
+                            "type": "dependency",
+                            "dependencies": []
+                        }
+                    ]
+                }
+            ],
+            "fragments": [
+                {
+                    "name": "AlbumsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "ArtistsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "FoldersFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "GenresFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "PlaylistsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "TracksFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [],
+            "elements": [],
+            "summary": "The activity is used for configuring a music player widget, including setting background and text colors, as well as saving and updating the widget's appearance.",
+            "transfer": []
+        },
+        {
+            "name": "com.simplemobiletools.commons.activities.AboutActivity",
+            "layouts": [],
+            "fragments": [],
+            "dialogs": [],
+            "elements": [],
+            "summary": "The AboutActivity is an informational activity within the app, typically used to display information about the app such as its version, credits, and other details.",
+            "transfer": []
+        },
+        {
+            "name": "com.simplemobiletools.commons.activities.CustomizationActivity",
+            "layouts": [],
+            "fragments": [],
+            "dialogs": [],
+            "elements": [],
+            "summary": "The CustomizationActivity is designed to allow users to personalize various settings related to the app's appearance and functionality.",
+            "transfer": []
+        },
+        {
+            "name": "com.simplemobiletools.musicplayer.activities.SettingsActivity",
+            "layouts": [
+                {
+                    "name": "activity_settings",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/settings_coordinator"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/settings_toolbar",
+                                "title": "@string/settings",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.core.widget.NestedScrollView",
+                                "id": "@+id/settings_nested_scrollview",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "LinearLayout",
+                                "id": "@+id/settings_holder",
+                                "orientation": "vertical"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_color_customization_section_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/color_customization"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.constraintlayout.widget.ConstraintLayout",
+                                "id": "@+id/settings_color_customization_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_color_customization_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/customize_colors",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.constraintlayout.widget.ConstraintLayout",
+                                "id": "@+id/settings_widget_color_customization_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_widget_color_customization_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/customize_widget_colors",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_color_customization_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_general_settings_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/general_settings"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_purchase_thank_you_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_purchase_thank_you",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/purchase_simple_thank_you"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_use_english_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_use_english",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/use_english_language"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_language_holder",
+                                "style": "@style/SettingsHolderTextViewStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_language_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/language"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_language",
+                                "style": "@style/SettingsTextValueStyle",
+                                "layout_below": "@+id/settings_language_label",
+                                "text": "English"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_manage_excluded_folders_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_manage_excluded_folders",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/manage_excluded_folders"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_manage_shown_tabs_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_manage_shown_tabs_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/manage_shown_tabs"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_swap_prev_next_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_swap_prev_next",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Swap previous/next headphone buttons"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_show_filename_holder",
+                                "style": "@style/SettingsHolderTextViewStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_show_filename_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "Show filename as song title"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_show_filename",
+                                "style": "@style/SettingsTextValueStyle",
+                                "layout_below": "@+id/settings_show_filename_label",
+                                "text": "If title is not available"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_general_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_playback_section_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/audio"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_gapless_playback_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_gapless_playback",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Gapless playback"
+                            },
+                            "dynamic_properties": []
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "settings_activity",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_settings",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/settings_coordinator"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/settings_toolbar",
+                                "title": "@string/settings",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.core.widget.NestedScrollView",
+                                "id": "@+id/settings_nested_scrollview",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "LinearLayout",
+                                "id": "@+id/settings_holder",
+                                "orientation": "vertical"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_color_customization_section_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/color_customization"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.constraintlayout.widget.ConstraintLayout",
+                                "id": "@+id/settings_color_customization_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_color_customization_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/customize_colors",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.constraintlayout.widget.ConstraintLayout",
+                                "id": "@+id/settings_widget_color_customization_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_widget_color_customization_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/customize_widget_colors",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_color_customization_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_general_settings_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/general_settings"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_purchase_thank_you_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_purchase_thank_you",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/purchase_simple_thank_you"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_use_english_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_use_english",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/use_english_language"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_language_holder",
+                                "style": "@style/SettingsHolderTextViewStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_language_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/language"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_language",
+                                "style": "@style/SettingsTextValueStyle",
+                                "layout_below": "@+id/settings_language_label",
+                                "text": "English"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_manage_excluded_folders_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_manage_excluded_folders",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/manage_excluded_folders"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_manage_shown_tabs_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_manage_shown_tabs_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/manage_shown_tabs"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_swap_prev_next_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_swap_prev_next",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Swap previous/next headphone buttons"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_show_filename_holder",
+                                "style": "@style/SettingsHolderTextViewStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_show_filename_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "Show filename as song title"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_show_filename",
+                                "style": "@style/SettingsTextValueStyle",
+                                "layout_below": "@+id/settings_show_filename_label",
+                                "text": "If title is not available"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_general_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_playback_section_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/audio"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_gapless_playback_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_gapless_playback",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Gapless playback"
+                            },
+                            "dynamic_properties": []
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [
+                {
+                    "name": "MyViewPagerFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [],
+            "elements": [],
+            "summary": "",
+            "transfer": [
+                "WidgetConfigureActivity",
+                "ExcludedFoldersActivity"
+            ]
+        },
+        {
+            "name": "com.simplemobiletools.musicplayer.activities.ExcludedFoldersActivity",
+            "layouts": [
+                {
+                    "name": "activity_excluded_folders",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/excluded_folders_coordinator"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/excluded_folders_toolbar",
+                                "title": "@string/manage_excluded_folders",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/excluded_folders_wrapper",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyRecyclerView",
+                                "id": "@+id/excluded_folders_list",
+                                "clipToPadding": "false",
+                                "scrollbars": "vertical",
+                                "layoutManager": "com.simplemobiletools.commons.views.MyLinearLayoutManager"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/excluded_folders_placeholder",
+                                "paddingLeft": "@dimen/big_margin",
+                                "text": "Excluding a folder will prevent the displaying of all audio files within. Files manually added to playlists will not be affected."
+                            },
+                            "dynamic_properties": []
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_excluded_folders",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/excluded_folders_coordinator"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/excluded_folders_toolbar",
+                                "title": "@string/manage_excluded_folders",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/excluded_folders_wrapper",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyRecyclerView",
+                                "id": "@+id/excluded_folders_list",
+                                "clipToPadding": "false",
+                                "scrollbars": "vertical",
+                                "layoutManager": "com.simplemobiletools.commons.views.MyLinearLayoutManager"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/excluded_folders_placeholder",
+                                "paddingLeft": "@dimen/big_margin",
+                                "text": "Excluding a folder will prevent the displaying of all audio files within. Files manually added to playlists will not be affected."
+                            },
+                            "dynamic_properties": []
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [
+                {
+                    "name": "AlbumsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "ArtistsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "FoldersFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "GenresFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "PlaylistsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "TracksFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [],
+            "elements": [],
+            "summary": "",
+            "transfer": []
+        },
+        {
+            "name": "com.simplemobiletools.musicplayer.activities.EqualizerActivity",
+            "layouts": [
+                {
+                    "name": "equalizer_band",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/equalizer_band_holder",
+                                "layout_marginBottom": "@dimen/small_margin"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MySeekBar",
+                                "id": "@+id/equalizer_band_seek_bar",
+                                "layout_centerVertical": "true",
+                                "layout_toEndOf": "@+id/equalizer_band_label"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/equalizer_band_label",
+                                "layout_centerVertical": "true",
+                                "ems": "4",
+                                "textSize": "@dimen/normal_text_size",
+                                "text": "60 Hz"
+                            },
+                            "dynamic_properties": []
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_equalizer",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/equalizer_coordinator"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/equalizer_toolbar",
+                                "title": "Equalizer",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.core.widget.NestedScrollView",
+                                "id": "@+id/equalizer_nested_scrollview",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.constraintlayout.widget.ConstraintLayout",
+                                "id": "@+id/equalizer_holder",
+                                "layout_marginBottom": "@dimen/activity_margin"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/equalizer_db_labels_holder",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/equalizer_label_margin",
+                                "ems": "4"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/equalizer_label_left",
+                                "layout_alignParentTop": "true",
+                                "layout_marginStart": "@dimen/medium_margin",
+                                "layout_toEndOf": "@+id/equalizer_label_margin",
+                                "textSize": "@dimen/normal_text_size",
+                                "text": "+15"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/equalizer_label_0",
+                                "layout_centerHorizontal": "true",
+                                "layout_toStartOf": "@+id/equalizer_label_right",
+                                "layout_toEndOf": "@+id/equalizer_label_left",
+                                "textSize": "@dimen/normal_text_size",
+                                "text": "0"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/equalizer_label_right",
+                                "layout_alignParentTop": "true",
+                                "layout_alignParentEnd": "true",
+                                "layout_marginEnd": "@dimen/activity_margin",
+                                "textSize": "@dimen/normal_text_size",
+                                "text": "-15"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "LinearLayout",
+                                "id": "@+id/equalizer_bands_holder",
+                                "orientation": "vertical",
+                                "layout_constraintEnd_toEndOf": "parent",
+                                "layout_constraintTop_toBottomOf": "@+id/equalizer_db_labels_holder"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/equalizer_preset",
+                                "style": "@style/ColoredButtonStyle",
+                                "layout_constraintEnd_toEndOf": "parent",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toBottomOf": "@+id/equalizer_bands_holder",
+                                "text": "@string/custom"
+                            },
+                            "dynamic_properties": []
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_equalizer",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/equalizer_coordinator"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/equalizer_toolbar",
+                                "title": "Equalizer",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.core.widget.NestedScrollView",
+                                "id": "@+id/equalizer_nested_scrollview",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.constraintlayout.widget.ConstraintLayout",
+                                "id": "@+id/equalizer_holder",
+                                "layout_marginBottom": "@dimen/activity_margin"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/equalizer_db_labels_holder",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/equalizer_label_margin",
+                                "ems": "4"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/equalizer_label_left",
+                                "layout_alignParentTop": "true",
+                                "layout_marginStart": "@dimen/medium_margin",
+                                "layout_toEndOf": "@+id/equalizer_label_margin",
+                                "textSize": "@dimen/normal_text_size",
+                                "text": "+15"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/equalizer_label_0",
+                                "layout_centerHorizontal": "true",
+                                "layout_toStartOf": "@+id/equalizer_label_right",
+                                "layout_toEndOf": "@+id/equalizer_label_left",
+                                "textSize": "@dimen/normal_text_size",
+                                "text": "0"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/equalizer_label_right",
+                                "layout_alignParentTop": "true",
+                                "layout_alignParentEnd": "true",
+                                "layout_marginEnd": "@dimen/activity_margin",
+                                "textSize": "@dimen/normal_text_size",
+                                "text": "-15"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "LinearLayout",
+                                "id": "@+id/equalizer_bands_holder",
+                                "orientation": "vertical",
+                                "layout_constraintEnd_toEndOf": "parent",
+                                "layout_constraintTop_toBottomOf": "@+id/equalizer_db_labels_holder"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/equalizer_preset",
+                                "style": "@style/ColoredButtonStyle",
+                                "layout_constraintEnd_toEndOf": "parent",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toBottomOf": "@+id/equalizer_bands_holder",
+                                "text": "@string/custom"
+                            },
+                            "dynamic_properties": []
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [
+                {
+                    "name": "AlbumsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "ArtistsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "FoldersFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "GenresFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "PlaylistsFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "TracksFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [],
+            "elements": [],
+            "summary": "",
+            "transfer": []
+        },
+        {
+            "name": "com.simplemobiletools.musicplayer.activities.AlbumsActivity",
+            "layouts": [
+                {
+                    "name": "albums_activity",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_albums",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/albums_coordinator"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/albums_toolbar",
+                                "title": "@string/artist",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/albums_holder",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.qtalk.recyclerviewfastscroller.RecyclerViewFastScroller",
+                                "id": "@+id/albums_fastscroller",
+                                "layout_above": "@+id/current_track_bar"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyRecyclerView",
+                                "id": "@+id/albums_list",
+                                "clipToPadding": "false",
+                                "layoutAnimation": "@anim/layout_animation",
+                                "layoutManager": "com.simplemobiletools.commons.views.MyLinearLayoutManager"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/current_track_bar",
+                                "layout": "@layout/view_current_track_bar",
+                                "layout_alignParentBottom": "true"
+                            },
+                            "dynamic_properties": []
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": [
+                        {
+                            "name": "",
+                            "elements": [
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "com.simplemobiletools.musicplayer.views.CurrentTrackBar",
+                                        "id": "@+id/current_track_bar",
+                                        "layout_alignParentBottom": "true",
+                                        "visibility": "visible"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "ImageView",
+                                        "id": "@+id/current_track_divider",
+                                        "importantForAccessibility": "no"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "ImageView",
+                                        "id": "@+id/current_track_image",
+                                        "layout_marginStart": "@dimen/normal_margin",
+                                        "layout_marginEnd": "@dimen/normal_margin",
+                                        "layout_marginBottom": "@dimen/normal_margin"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "com.simplemobiletools.musicplayer.views.MarqueeTextView",
+                                        "id": "@+id/current_track_label",
+                                        "layout_alignTop": "@+id/current_track_image",
+                                        "layout_alignBottom": "@+id/current_track_image",
+                                        "layout_toStartOf": "@+id/current_track_play_pause",
+                                        "layout_toEndOf": "@+id/current_track_image",
+                                        "textSize": "@dimen/bigger_text_size",
+                                        "text": "My Track"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "com.airbnb.lottie.LottieAnimationView",
+                                        "id": "@+id/current_track_play_pause",
+                                        "layout_alignTop": "@+id/current_track_image",
+                                        "layout_alignBottom": "@+id/current_track_image",
+                                        "layout_alignParentEnd": "true",
+                                        "layout_marginEnd": "@dimen/normal_margin",
+                                        "scaleType": "fitCenter",
+                                        "lottie_autoPlay": "false",
+                                        "lottie_loop": "false",
+                                        "lottie_rawRes": "@raw/playpause"
+                                    },
+                                    "dynamic_properties": []
+                                }
+                            ],
+                            "type": "dependency",
+                            "dependencies": []
+                        }
+                    ]
+                }
+            ],
+            "fragments": [],
+            "dialogs": [],
+            "elements": [],
+            "summary": "",
+            "transfer": [
+                "TracksActivity"
+            ]
+        },
+        {
+            "name": "com.simplemobiletools.musicplayer.activities.TracksActivity",
+            "layouts": [
+                {
+                    "name": "R.menu.tracks_menu",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.xx",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_tracks",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/tracks_coordinator"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/tracks_toolbar",
+                                "menu": "@menu/menu_playlist",
+                                "title": "@string/artist",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/tracks_holder",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.qtalk.recyclerviewfastscroller.RecyclerViewFastScroller",
+                                "id": "@+id/tracks_fastscroller",
+                                "layout_above": "@+id/current_track_bar"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyRecyclerView",
+                                "id": "@+id/tracks_list",
+                                "clipToPadding": "false",
+                                "layoutAnimation": "@anim/layout_animation",
+                                "layoutManager": "com.simplemobiletools.commons.views.MyLinearLayoutManager"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/tracks_placeholder",
+                                "layout_centerHorizontal": "true",
+                                "alpha": "0.8",
+                                "text": "@string/no_items_found",
+                                "textSize": "@dimen/bigger_text_size",
+                                "textStyle": "italic",
+                                "visibility": "gone"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/tracks_placeholder_2",
+                                "layout_below": "@+id/tracks_placeholder",
+                                "layout_centerHorizontal": "true",
+                                "text": "Add folder to playlist",
+                                "textSize": "@dimen/bigger_text_size",
+                                "visibility": "gone"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/current_track_bar",
+                                "layout": "@layout/view_current_track_bar",
+                                "layout_alignParentBottom": "true",
+                                "visibility": "gone"
+                            },
+                            "dynamic_properties": []
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": [
+                        {
+                            "name": "",
+                            "elements": [
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "com.simplemobiletools.musicplayer.views.CurrentTrackBar",
+                                        "id": "@+id/current_track_bar",
+                                        "layout_alignParentBottom": "true",
+                                        "visibility": "visible"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "ImageView",
+                                        "id": "@+id/current_track_divider",
+                                        "importantForAccessibility": "no"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "ImageView",
+                                        "id": "@+id/current_track_image",
+                                        "layout_marginStart": "@dimen/normal_margin",
+                                        "layout_marginEnd": "@dimen/normal_margin",
+                                        "layout_marginBottom": "@dimen/normal_margin"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "com.simplemobiletools.musicplayer.views.MarqueeTextView",
+                                        "id": "@+id/current_track_label",
+                                        "layout_alignTop": "@+id/current_track_image",
+                                        "layout_alignBottom": "@+id/current_track_image",
+                                        "layout_toStartOf": "@+id/current_track_play_pause",
+                                        "layout_toEndOf": "@+id/current_track_image",
+                                        "textSize": "@dimen/bigger_text_size",
+                                        "text": "My Track"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "com.airbnb.lottie.LottieAnimationView",
+                                        "id": "@+id/current_track_play_pause",
+                                        "layout_alignTop": "@+id/current_track_image",
+                                        "layout_alignBottom": "@+id/current_track_image",
+                                        "layout_alignParentEnd": "true",
+                                        "layout_marginEnd": "@dimen/normal_margin",
+                                        "scaleType": "fitCenter",
+                                        "lottie_autoPlay": "false",
+                                        "lottie_loop": "false",
+                                        "lottie_rawRes": "@raw/playpause"
+                                    },
+                                    "dynamic_properties": []
+                                }
+                            ],
+                            "type": "dependency",
+                            "dependencies": []
+                        }
+                    ]
+                },
+                {
+                    "name": "R.menu.tracks_toolbar_menu",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.menu_tracks",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_tracks",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/tracks_coordinator"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/tracks_toolbar",
+                                "menu": "@menu/menu_playlist",
+                                "title": "@string/artist",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/tracks_holder",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.qtalk.recyclerviewfastscroller.RecyclerViewFastScroller",
+                                "id": "@+id/tracks_fastscroller",
+                                "layout_above": "@+id/current_track_bar"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyRecyclerView",
+                                "id": "@+id/tracks_list",
+                                "clipToPadding": "false",
+                                "layoutAnimation": "@anim/layout_animation",
+                                "layoutManager": "com.simplemobiletools.commons.views.MyLinearLayoutManager"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/tracks_placeholder",
+                                "layout_centerHorizontal": "true",
+                                "alpha": "0.8",
+                                "text": "@string/no_items_found",
+                                "textSize": "@dimen/bigger_text_size",
+                                "textStyle": "italic",
+                                "visibility": "gone"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/tracks_placeholder_2",
+                                "layout_below": "@+id/tracks_placeholder",
+                                "layout_centerHorizontal": "true",
+                                "text": "Add folder to playlist",
+                                "textSize": "@dimen/bigger_text_size",
+                                "visibility": "gone"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/current_track_bar",
+                                "layout": "@layout/view_current_track_bar",
+                                "layout_alignParentBottom": "true",
+                                "visibility": "gone"
+                            },
+                            "dynamic_properties": []
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": [
+                        {
+                            "name": "",
+                            "elements": [
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "com.simplemobiletools.musicplayer.views.CurrentTrackBar",
+                                        "id": "@+id/current_track_bar",
+                                        "layout_alignParentBottom": "true",
+                                        "visibility": "visible"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "ImageView",
+                                        "id": "@+id/current_track_divider",
+                                        "importantForAccessibility": "no"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "ImageView",
+                                        "id": "@+id/current_track_image",
+                                        "layout_marginStart": "@dimen/normal_margin",
+                                        "layout_marginEnd": "@dimen/normal_margin",
+                                        "layout_marginBottom": "@dimen/normal_margin"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "com.simplemobiletools.musicplayer.views.MarqueeTextView",
+                                        "id": "@+id/current_track_label",
+                                        "layout_alignTop": "@+id/current_track_image",
+                                        "layout_alignBottom": "@+id/current_track_image",
+                                        "layout_toStartOf": "@+id/current_track_play_pause",
+                                        "layout_toEndOf": "@+id/current_track_image",
+                                        "textSize": "@dimen/bigger_text_size",
+                                        "text": "My Track"
+                                    },
+                                    "dynamic_properties": []
+                                },
+                                {
+                                    "name": "0",
+                                    "static_properties": {
+                                        "tag": "com.airbnb.lottie.LottieAnimationView",
+                                        "id": "@+id/current_track_play_pause",
+                                        "layout_alignTop": "@+id/current_track_image",
+                                        "layout_alignBottom": "@+id/current_track_image",
+                                        "layout_alignParentEnd": "true",
+                                        "layout_marginEnd": "@dimen/normal_margin",
+                                        "scaleType": "fitCenter",
+                                        "lottie_autoPlay": "false",
+                                        "lottie_loop": "false",
+                                        "lottie_rawRes": "@raw/playpause"
+                                    },
+                                    "dynamic_properties": []
+                                }
+                            ],
+                            "type": "dependency",
+                            "dependencies": []
+                        }
+                    ]
+                }
+            ],
+            "fragments": [],
+            "dialogs": [],
+            "elements": [],
+            "summary": "",
+            "transfer": []
+        },
+        {
+            "name": "com.simplemobiletools.musicplayer.activities.TrackActivity",
+            "layouts": [
+                {
+                    "name": "activity_track",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ScrollView",
+                                "id": "@+id/activity_track_Scrollview",
+                                "fillViewport": "true"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.constraintlayout.widget.ConstraintLayout",
+                                "id": "@+id/activity_track_holder",
+                                "ignore": "HardcodedText"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/activity_track_image",
+                                "adjustViewBounds": "true",
+                                "contentDescription": "@string/album",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/activity_track_top_shadow",
+                                "contentDescription": "@null",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/activity_track_progress_current",
+                                "maxLines": "1",
+                                "text": "00:00",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_progressbar"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MySeekBar",
+                                "id": "@+id/activity_track_progressbar",
+                                "layout_marginStart": "@dimen/activity_margin",
+                                "layout_marginEnd": "@dimen/activity_margin",
+                                "clickable": "true",
+                                "focusable": "true",
+                                "layout_constraintEnd_toEndOf": "parent",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_image"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/activity_track_speed_icon",
+                                "scaleType": "fitEnd",
+                                "layout_constraintBottom_toBottomOf": "@+id/activity_track_speed",
+                                "layout_constraintEnd_toStartOf": "@+id/activity_track_speed",
+                                "layout_constraintHorizontal_chainStyle": "packed",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_progressbar"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/activity_track_speed",
+                                "layout_constraintEnd_toEndOf": "parent",
+                                "layout_constraintStart_toEndOf": "@+id/activity_track_speed_icon",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_progressbar",
+                                "ignore": "RtlHardcoded",
+                                "text": "1x"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/activity_track_speed_click_area",
+                                "layout_marginStart": "@dimen/activity_margin",
+                                "layout_constraintEnd_toEndOf": "parent",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_progressbar"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/activity_track_progress_max",
+                                "maxLines": "1",
+                                "text": "00:00",
+                                "layout_constraintEnd_toEndOf": "parent",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_progressbar"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.musicplayer.views.MarqueeTextView",
+                                "id": "@+id/activity_track_title",
+                                "width": "800dp",
+                                "fadingEdge": "horizontal",
+                                "scrollHorizontally": "true",
+                                "textSize": "@dimen/extra_big_text_size",
+                                "layout_constraintBottom_toTopOf": "@+id/activity_track_artist",
+                                "layout_constraintEnd_toEndOf": "parent",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_progress_current",
+                                "text": "Track title"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.musicplayer.views.MarqueeTextView",
+                                "id": "@+id/activity_track_artist",
+                                "width": "800dp",
+                                "alpha": "0.8",
+                                "fadingEdge": "horizontal",
+                                "scrollHorizontally": "true",
+                                "textSize": "@dimen/actionbar_text_size",
+                                "layout_constraintBottom_toTopOf": "@+id/activity_track_toggle_shuffle",
+                                "layout_constraintEnd_toEndOf": "parent",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_title",
+                                "text": "Track artist"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/activity_track_toggle_shuffle",
+                                "contentDescription": "Enable shuffle",
+                                "layout_constraintBottom_toTopOf": "@+id/next_track_holder",
+                                "layout_constraintEnd_toStartOf": "@+id/activity_track_previous",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_artist"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/activity_track_previous",
+                                "contentDescription": "@string/previous",
+                                "layout_constraintBottom_toTopOf": "@+id/next_track_holder",
+                                "layout_constraintEnd_toStartOf": "@+id/activity_track_play_pause",
+                                "layout_constraintStart_toEndOf": "@+id/activity_track_toggle_shuffle",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_artist"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.airbnb.lottie.LottieAnimationView",
+                                "id": "@+id/activity_track_play_pause",
+                                "contentDescription": "@string/playpause",
+                                "scaleType": "fitCenter",
+                                "layout_constraintBottom_toTopOf": "@+id/next_track_holder",
+                                "layout_constraintEnd_toStartOf": "@+id/activity_track_next",
+                                "layout_constraintStart_toEndOf": "@+id/activity_track_previous",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_artist",
+                                "lottie_autoPlay": "false",
+                                "lottie_loop": "false",
+                                "lottie_rawRes": "@raw/playpause"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/activity_track_next",
+                                "contentDescription": "@string/next",
+                                "layout_constraintBottom_toTopOf": "@+id/next_track_holder",
+                                "layout_constraintEnd_toStartOf": "@+id/activity_track_playback_setting",
+                                "layout_constraintStart_toEndOf": "@+id/activity_track_play_pause",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_artist"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/activity_track_playback_setting",
+                                "contentDescription": "Repeat current song",
+                                "layout_constraintBottom_toTopOf": "@+id/next_track_holder",
+                                "layout_constraintEnd_toEndOf": "parent",
+                                "layout_constraintStart_toEndOf": "@+id/activity_track_next",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_artist"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/next_track_holder",
+                                "layout_constraintBottom_toBottomOf": "parent",
+                                "layout_constraintStart_toStartOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/next_track_divider",
+                                "importantForAccessibility": "no"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/next_track_image",
+                                "layout_marginStart": "@dimen/normal_margin",
+                                "layout_marginEnd": "@dimen/normal_margin",
+                                "layout_marginBottom": "@dimen/normal_margin"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/next_track_label",
+                                "layout_alignTop": "@+id/next_track_image",
+                                "layout_alignBottom": "@+id/next_track_image",
+                                "layout_toEndOf": "@+id/next_track_image",
+                                "ellipsize": "end",
+                                "maxLines": "1",
+                                "textSize": "@dimen/bigger_text_size",
+                                "text": "Next Track: My Track"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.AppBarLayout",
+                                "id": "@+id/activity_track_appbar",
+                                "elevation": "0dp",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/activity_track_toolbar",
+                                "navigationIcon": "@drawable/ic_arrow_left_vector"
+                            },
+                            "dynamic_properties": []
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_track",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ScrollView",
+                                "id": "@+id/activity_track_Scrollview",
+                                "fillViewport": "true"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.constraintlayout.widget.ConstraintLayout",
+                                "id": "@+id/activity_track_holder",
+                                "ignore": "HardcodedText"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/activity_track_image",
+                                "adjustViewBounds": "true",
+                                "contentDescription": "@string/album",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/activity_track_top_shadow",
+                                "contentDescription": "@null",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/activity_track_progress_current",
+                                "maxLines": "1",
+                                "text": "00:00",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_progressbar"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MySeekBar",
+                                "id": "@+id/activity_track_progressbar",
+                                "layout_marginStart": "@dimen/activity_margin",
+                                "layout_marginEnd": "@dimen/activity_margin",
+                                "clickable": "true",
+                                "focusable": "true",
+                                "layout_constraintEnd_toEndOf": "parent",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_image"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/activity_track_speed_icon",
+                                "scaleType": "fitEnd",
+                                "layout_constraintBottom_toBottomOf": "@+id/activity_track_speed",
+                                "layout_constraintEnd_toStartOf": "@+id/activity_track_speed",
+                                "layout_constraintHorizontal_chainStyle": "packed",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_progressbar"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/activity_track_speed",
+                                "layout_constraintEnd_toEndOf": "parent",
+                                "layout_constraintStart_toEndOf": "@+id/activity_track_speed_icon",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_progressbar",
+                                "ignore": "RtlHardcoded",
+                                "text": "1x"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/activity_track_speed_click_area",
+                                "layout_marginStart": "@dimen/activity_margin",
+                                "layout_constraintEnd_toEndOf": "parent",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_progressbar"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/activity_track_progress_max",
+                                "maxLines": "1",
+                                "text": "00:00",
+                                "layout_constraintEnd_toEndOf": "parent",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_progressbar"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.musicplayer.views.MarqueeTextView",
+                                "id": "@+id/activity_track_title",
+                                "width": "800dp",
+                                "fadingEdge": "horizontal",
+                                "scrollHorizontally": "true",
+                                "textSize": "@dimen/extra_big_text_size",
+                                "layout_constraintBottom_toTopOf": "@+id/activity_track_artist",
+                                "layout_constraintEnd_toEndOf": "parent",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_progress_current",
+                                "text": "Track title"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.musicplayer.views.MarqueeTextView",
+                                "id": "@+id/activity_track_artist",
+                                "width": "800dp",
+                                "alpha": "0.8",
+                                "fadingEdge": "horizontal",
+                                "scrollHorizontally": "true",
+                                "textSize": "@dimen/actionbar_text_size",
+                                "layout_constraintBottom_toTopOf": "@+id/activity_track_toggle_shuffle",
+                                "layout_constraintEnd_toEndOf": "parent",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_title",
+                                "text": "Track artist"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/activity_track_toggle_shuffle",
+                                "contentDescription": "Enable shuffle",
+                                "layout_constraintBottom_toTopOf": "@+id/next_track_holder",
+                                "layout_constraintEnd_toStartOf": "@+id/activity_track_previous",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_artist"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/activity_track_previous",
+                                "contentDescription": "@string/previous",
+                                "layout_constraintBottom_toTopOf": "@+id/next_track_holder",
+                                "layout_constraintEnd_toStartOf": "@+id/activity_track_play_pause",
+                                "layout_constraintStart_toEndOf": "@+id/activity_track_toggle_shuffle",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_artist"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.airbnb.lottie.LottieAnimationView",
+                                "id": "@+id/activity_track_play_pause",
+                                "contentDescription": "@string/playpause",
+                                "scaleType": "fitCenter",
+                                "layout_constraintBottom_toTopOf": "@+id/next_track_holder",
+                                "layout_constraintEnd_toStartOf": "@+id/activity_track_next",
+                                "layout_constraintStart_toEndOf": "@+id/activity_track_previous",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_artist",
+                                "lottie_autoPlay": "false",
+                                "lottie_loop": "false",
+                                "lottie_rawRes": "@raw/playpause"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/activity_track_next",
+                                "contentDescription": "@string/next",
+                                "layout_constraintBottom_toTopOf": "@+id/next_track_holder",
+                                "layout_constraintEnd_toStartOf": "@+id/activity_track_playback_setting",
+                                "layout_constraintStart_toEndOf": "@+id/activity_track_play_pause",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_artist"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/activity_track_playback_setting",
+                                "contentDescription": "Repeat current song",
+                                "layout_constraintBottom_toTopOf": "@+id/next_track_holder",
+                                "layout_constraintEnd_toEndOf": "parent",
+                                "layout_constraintStart_toEndOf": "@+id/activity_track_next",
+                                "layout_constraintTop_toBottomOf": "@+id/activity_track_artist"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/next_track_holder",
+                                "layout_constraintBottom_toBottomOf": "parent",
+                                "layout_constraintStart_toStartOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/next_track_divider",
+                                "importantForAccessibility": "no"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/next_track_image",
+                                "layout_marginStart": "@dimen/normal_margin",
+                                "layout_marginEnd": "@dimen/normal_margin",
+                                "layout_marginBottom": "@dimen/normal_margin"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/next_track_label",
+                                "layout_alignTop": "@+id/next_track_image",
+                                "layout_alignBottom": "@+id/next_track_image",
+                                "layout_toEndOf": "@+id/next_track_image",
+                                "ellipsize": "end",
+                                "maxLines": "1",
+                                "textSize": "@dimen/bigger_text_size",
+                                "text": "Next Track: My Track"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.AppBarLayout",
+                                "id": "@+id/activity_track_appbar",
+                                "elevation": "0dp",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/activity_track_toolbar",
+                                "navigationIcon": "@drawable/ic_arrow_left_vector"
+                            },
+                            "dynamic_properties": []
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [
+                {
+                    "name": "PlaybackSpeedFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "MyViewPagerFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [],
+            "elements": [],
+            "summary": "",
+            "transfer": [
+                "QueueActivity"
+            ]
+        },
+        {
+            "name": "com.simplemobiletools.musicplayer.activities.QueueActivity",
+            "layouts": [
+                {
+                    "name": "R.menu.xx",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_queue",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/queue_coordinator"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/queue_toolbar",
+                                "menu": "@menu/menu_queue",
+                                "title": "Track queue",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/queue_holder"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.qtalk.recyclerviewfastscroller.RecyclerViewFastScroller",
+                                "id": "@+id/queue_fastscroller",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyRecyclerView",
+                                "id": "@+id/queue_list",
+                                "clipToPadding": "false",
+                                "layoutAnimation": "@anim/layout_animation",
+                                "layoutManager": "com.simplemobiletools.commons.views.MyLinearLayoutManager"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/queue_placeholder",
+                                "layout_centerHorizontal": "true",
+                                "alpha": "0.8",
+                                "text": "@string/no_items_found",
+                                "textSize": "@dimen/bigger_text_size",
+                                "textStyle": "italic",
+                                "visibility": "gone"
+                            },
+                            "dynamic_properties": []
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.menu_queue",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.menu_search",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.search_menu",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_queue",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/queue_coordinator"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/queue_toolbar",
+                                "menu": "@menu/menu_queue",
+                                "title": "Track queue",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/queue_holder"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.qtalk.recyclerviewfastscroller.RecyclerViewFastScroller",
+                                "id": "@+id/queue_fastscroller",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyRecyclerView",
+                                "id": "@+id/queue_list",
+                                "clipToPadding": "false",
+                                "layoutAnimation": "@anim/layout_animation",
+                                "layoutManager": "com.simplemobiletools.commons.views.MyLinearLayoutManager"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/queue_placeholder",
+                                "layout_centerHorizontal": "true",
+                                "alpha": "0.8",
+                                "text": "@string/no_items_found",
+                                "textSize": "@dimen/bigger_text_size",
+                                "textStyle": "italic",
+                                "visibility": "gone"
+                            },
+                            "dynamic_properties": []
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.queue_toolbar_menu",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [
+                {
+                    "name": "MyViewPagerFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [],
+            "elements": [],
+            "summary": "",
+            "transfer": []
+        }
+    ],
+    "activities_name": [
+        "SplashActivity",
+        "MainActivity",
+        "WidgetConfigureActivity",
+        "AboutActivity",
+        "CustomizationActivity",
+        "SettingsActivity",
+        "ExcludedFoldersActivity",
+        "EqualizerActivity",
+        "AlbumsActivity",
+        "TracksActivity",
+        "TrackActivity",
+        "QueueActivity"
+    ]
+}

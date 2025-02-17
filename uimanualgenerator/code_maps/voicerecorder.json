@@ -1,0 +1,780 @@
+{
+    "activities": [
+        {
+            "name": "com.simplemobiletools.voicerecorder.activities.WidgetRecordDisplayConfigureActivity",
+            "layouts": [
+                {
+                    "name": "widget_record_display_config",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/config_coordinator"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "N/A",
+                                "effect": "Holds the entire configuration layout."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/config_holder",
+                                "layout_centerHorizontal": "true",
+                                "layout_margin": "@dimen/activity_margin"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "N/A",
+                                "effect": "Center-aligned container for the configuration elements."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/config_wrapper",
+                                "layout_above": "@+id/config_widget_color",
+                                "layout_marginBottom": "@dimen/activity_margin"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "N/A",
+                                "effect": "Wrapper for elements below the widget color selection."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/config_image"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "N/A",
+                                "effect": "Placeholder image possibly for demonstration."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/config_widget_color",
+                                "layout_above": "@+id/config_save",
+                                "layout_margin": "@dimen/tiny_margin"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "User selects color, click",
+                                "effect": "Open color picker dialog to set widget background color."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/config_widget_seekbar_holder",
+                                "layout_alignTop": "@+id/config_widget_color",
+                                "layout_alignBottom": "@+id/config_widget_color",
+                                "layout_marginStart": "@dimen/medium_margin",
+                                "layout_toEndOf": "@+id/config_widget_color"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "N/A",
+                                "effect": "Container for the seekbar to adjust transparency."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MySeekBar",
+                                "id": "@+id/config_widget_seekbar",
+                                "layout_centerVertical": "true"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "User adjusts transparency, touch",
+                                "effect": "Seekbar to adjust the alpha value of the widget's background color."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "Button",
+                                "id": "@+id/config_save",
+                                "style": "@style/MyWidgetConfigSaveStyle",
+                                "layout_alignParentEnd": "true",
+                                "layout_alignParentBottom": "true",
+                                "text": "@string/ok"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "User confirms settings, click",
+                                "effect": "Save the widget configuration and update the widget."
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [
+                {
+                    "name": "PlayerFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "TrashFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [],
+            "elements": [],
+            "summary": "This activity allows users to configure the appearance of a widget for the voice recorder app, including setting the widget's color and transparency.",
+            "transfer": []
+        },
+        {
+            "name": "com.simplemobiletools.voicerecorder.activities.BackgroundRecordActivity",
+            "layouts": [],
+            "fragments": [
+                {
+                    "name": "PlayerFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "TrashFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [],
+            "elements": [],
+            "summary": "The `BackgroundRecordActivity` manages the background recording functionality, including handling permissions for notifications and controlling the state of the `RecorderService`.",
+            "transfer": []
+        },
+        {
+            "name": "com.simplemobiletools.voicerecorder.activities.SplashActivity",
+            "layouts": [],
+            "fragments": [],
+            "dialogs": [],
+            "elements": [],
+            "summary": "The `SplashActivity` is designed to serve as an entry point for the application, displaying a brief welcome screen before transitioning to the main user interface. It is responsible for initiating the application flow by starting the `MainActivity` and ensuring that the user cannot navigate back to the `SplashActivity`.",
+            "transfer": [
+                "MainActivity"
+            ]
+        },
+        {
+            "name": "com.simplemobiletools.voicerecorder.activities.MainActivity",
+            "layouts": [
+                {
+                    "name": "R.menu.main_menu",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_main",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/main_coordinator"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "n/a",
+                                "effect": "Acts as the root layout for the activity, providing the overall structure and containing child elements."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MySearchMenu",
+                                "id": "@+id/main_menu"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Open the main menu, allowing access to various actions like search, settings, and about information."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/main_holder"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "n/a",
+                                "effect": "A container layout that may hold other child views or layouts."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyViewPager",
+                                "id": "@+id/view_pager",
+                                "layout_above": "@+id/main_tabs_holder"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click on tabs",
+                                "effect": "Navigates between different fragments or views represented by tabs."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.tabs.TabLayout",
+                                "id": "@+id/main_tabs_holder",
+                                "layout_alignParentBottom": "true",
+                                "tabIndicator": "@null",
+                                "tabMinWidth": "150dp",
+                                "tabRippleColor": "@null"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Changes the current view or fragment within the ViewPager by selecting a different tab."
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "commons.R.layout.bottom_tablayout_item",
+                    "elements": [],
+                    "type": "",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.menu",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.options_menu",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [
+                {
+                    "name": "PlayerFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "TrashFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [],
+            "elements": [],
+            "summary": "The MainActivity is the primary interface for the Voice Recorder app. It manages the user interface with a ViewPager for navigating between different recording features, a tab layout for navigation, and handles various actions like starting recordings, accessing settings, and showing information about the app.",
+            "transfer": [
+                "AboutActivity",
+                "SettingsActivity"
+            ]
+        },
+        {
+            "name": "com.simplemobiletools.voicerecorder.activities.SettingsActivity",
+            "layouts": [
+                {
+                    "name": "activity_settings",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/settings_coordinator"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/settings_toolbar",
+                                "title": "@string/settings",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.core.widget.NestedScrollView",
+                                "id": "@+id/settings_nested_scrollview",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "LinearLayout",
+                                "id": "@+id/settings_holder",
+                                "orientation": "vertical"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_color_customization_section_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/color_customization"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.constraintlayout.widget.ConstraintLayout",
+                                "id": "@+id/settings_color_customization_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_color_customization_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/customize_colors",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.constraintlayout.widget.ConstraintLayout",
+                                "id": "@+id/settings_widget_color_customization_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_widget_color_customization_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/customize_widget_colors",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_color_customization_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_general_settings_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/general_settings"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_purchase_thank_you_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_purchase_thank_you",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/purchase_simple_thank_you"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_use_english_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_use_english",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/use_english_language"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_language_holder",
+                                "style": "@style/SettingsHolderTextViewStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_language_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/language"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_language",
+                                "style": "@style/SettingsTextValueStyle",
+                                "layout_below": "@+id/settings_language_label",
+                                "text": "English"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_change_date_time_format_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_change_date_time_format",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/change_date_and_time_format"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_hide_notification_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_hide_notification",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Try hiding the recording notification"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_record_after_launch_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_record_after_launch",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Start recording automatically after launching the app"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_save_recordings_holder",
+                                "style": "@style/SettingsHolderTextViewStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_save_recordings_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "Save recordings in"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_save_recordings",
+                                "style": "@style/SettingsTextValueStyle",
+                                "layout_below": "@+id/settings_save_recordings_label",
+                                "text": "@string/internal"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_extension_holder",
+                                "style": "@style/SettingsHolderTextViewStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_extension_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/extension"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_extension",
+                                "style": "@style/SettingsTextValueStyle",
+                                "layout_below": "@+id/settings_extension_label",
+                                "text": "m4a"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_audio_source_holder",
+                                "style": "@style/SettingsHolderTextViewStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_audio_source_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "Audio source"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_audio_source",
+                                "style": "@style/SettingsTextValueStyle",
+                                "layout_below": "@+id/settings_audio_source_label",
+                                "text": "128 kbps"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_bitrate_holder",
+                                "style": "@style/SettingsHolderTextViewStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_bitrate_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "Bitrate"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_bitrate",
+                                "style": "@style/SettingsTextValueStyle",
+                                "layout_below": "@+id/settings_bitrate_label",
+                                "text": "128 kbps"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_general_settings_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_recycle_bin_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/recycle_bin"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_use_recycle_bin_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_use_recycle_bin",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/move_items_into_recycle_bin"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_empty_recycle_bin_holder",
+                                "style": "@style/SettingsHolderTextViewStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_empty_recycle_bin_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/empty_recycle_bin"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_empty_recycle_bin_size",
+                                "style": "@style/SettingsTextValueStyle",
+                                "layout_below": "@+id/settings_empty_recycle_bin_label",
+                                "text": "0 B"
+                            },
+                            "dynamic_properties": []
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [
+                {
+                    "name": "PlayerFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "TrashFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [],
+            "elements": [],
+            "summary": "",
+            "transfer": [
+                "WidgetRecordDisplayConfigureActivity"
+            ]
+        },
+        {
+            "name": "com.simplemobiletools.commons.activities.AboutActivity",
+            "layouts": [],
+            "fragments": [],
+            "dialogs": [],
+            "elements": [],
+            "summary": "",
+            "transfer": []
+        },
+        {
+            "name": "com.simplemobiletools.commons.activities.CustomizationActivity",
+            "layouts": [],
+            "fragments": [],
+            "dialogs": [],
+            "elements": [],
+            "summary": "",
+            "transfer": []
+        }
+    ],
+    "activities_name": [
+        "WidgetRecordDisplayConfigureActivity",
+        "BackgroundRecordActivity",
+        "SplashActivity",
+        "MainActivity",
+        "SettingsActivity",
+        "AboutActivity",
+        "CustomizationActivity"
+    ]
+}

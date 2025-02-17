@@ -1,0 +1,737 @@
+{
+    "activities": [
+        {
+            "name": "com.simplemobiletools.applauncher.activities.SplashActivity",
+            "layouts": [],
+            "fragments": [],
+            "dialogs": [],
+            "elements": [],
+            "summary": "The com.simplemobiletools.applauncher.activities.SplashActivity is a startup screen for the application that initializes and transitions to the main user interface after a delay or completion of initialization tasks.",
+            "transfer": [
+                "MainActivity"
+            ]
+        },
+        {
+            "name": "com.simplemobiletools.applauncher.activities.MainActivity",
+            "layouts": [
+                {
+                    "name": "R.menu.main_menu",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.menu",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_main",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/main_coordinator"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout container",
+                                "effect": "holds the main UI components and manages their layout"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MySearchMenu",
+                                "id": "@+id/main_menu"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "menu access",
+                                "effect": "displays the app's options menu for various actions"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/main_relative_layout",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout container",
+                                "effect": "holds the content layout for the app"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/coordinator_layout"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout container",
+                                "effect": "used for additional layout management"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/launchers_holder"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout container",
+                                "effect": "holds the grid layout for app launchers"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/no_items_placeholder",
+                                "layout_centerHorizontal": "true",
+                                "alpha": "0.8",
+                                "text": "@string/no_items_found",
+                                "textSize": "@dimen/bigger_text_size",
+                                "textStyle": "italic",
+                                "visibility": "visible"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "display placeholder text",
+                                "effect": "shows when there are no items in the grid"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/no_items_placeholder_2",
+                                "layout_below": "@+id/no_items_placeholder",
+                                "layout_centerHorizontal": "true",
+                                "text": "Manage visible app icons",
+                                "textSize": "@dimen/bigger_text_size",
+                                "visibility": "visible"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "display placeholder text",
+                                "effect": "provides additional information on how to add items"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.qtalk.recyclerviewfastscroller.RecyclerViewFastScroller",
+                                "id": "@+id/launchers_fastscroller"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "scrolling assistance",
+                                "effect": "allows for fast scrolling through the grid"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyRecyclerView",
+                                "id": "@+id/launchers_grid",
+                                "clipToPadding": "false",
+                                "layoutManager": "com.simplemobiletools.commons.views.MyGridLayoutManager",
+                                "spanCount": "@integer/portrait_column_count"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "grid display",
+                                "effect": "displays the app launchers in a grid layout"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyFloatingActionButton",
+                                "id": "@+id/fab",
+                                "layout_margin": "@dimen/activity_margin"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "floating action button",
+                                "effect": "provides quick access to adding new launchers"
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_main",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/main_coordinator"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout container",
+                                "effect": "holds the main UI components and manages their layout"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MySearchMenu",
+                                "id": "@+id/main_menu"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "menu access",
+                                "effect": "displays the app's options menu for various actions"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/main_relative_layout",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout container",
+                                "effect": "holds the content layout for the app"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/coordinator_layout"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout container",
+                                "effect": "used for additional layout management"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/launchers_holder"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout container",
+                                "effect": "holds the grid layout for app launchers"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/no_items_placeholder",
+                                "layout_centerHorizontal": "true",
+                                "alpha": "0.8",
+                                "text": "@string/no_items_found",
+                                "textSize": "@dimen/bigger_text_size",
+                                "textStyle": "italic",
+                                "visibility": "visible"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "display placeholder text",
+                                "effect": "shows when there are no items in the grid"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/no_items_placeholder_2",
+                                "layout_below": "@+id/no_items_placeholder",
+                                "layout_centerHorizontal": "true",
+                                "text": "Manage visible app icons",
+                                "textSize": "@dimen/bigger_text_size",
+                                "visibility": "visible"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "display placeholder text",
+                                "effect": "provides additional information on how to add items"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.qtalk.recyclerviewfastscroller.RecyclerViewFastScroller",
+                                "id": "@+id/launchers_fastscroller"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "scrolling assistance",
+                                "effect": "allows for fast scrolling through the grid"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyRecyclerView",
+                                "id": "@+id/launchers_grid",
+                                "clipToPadding": "false",
+                                "layoutManager": "com.simplemobiletools.commons.views.MyGridLayoutManager",
+                                "spanCount": "@integer/portrait_column_count"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "grid display",
+                                "effect": "displays the app launchers in a grid layout"
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyFloatingActionButton",
+                                "id": "@+id/fab",
+                                "layout_margin": "@dimen/activity_margin"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "floating action button",
+                                "effect": "provides quick access to adding new launchers"
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.menu_main",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [],
+            "dialogs": [
+                {
+                    "name": "ChangeSortingDialog",
+                    "layouts": [],
+                    "elements": []
+                }
+            ],
+            "elements": [],
+            "summary": "The MainActivity is the primary interface for the app, allowing users to view and manage app launchers in a grid layout. It handles user interactions such as changing the number of columns, adding or removing launchers, and accessing settings and information about the app.",
+            "transfer": [
+                "AboutActivity",
+                "SettingsActivity"
+            ]
+        },
+        {
+            "name": "com.simplemobiletools.applauncher.activities.SettingsActivity",
+            "layouts": [
+                {
+                    "name": "activity_settings",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/settings_coordinator"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/settings_toolbar",
+                                "title": "@string/settings",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.core.widget.NestedScrollView",
+                                "id": "@+id/settings_nested_scrollview",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "LinearLayout",
+                                "id": "@+id/settings_holder",
+                                "orientation": "vertical"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_color_customization_section_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/color_customization"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.constraintlayout.widget.ConstraintLayout",
+                                "id": "@+id/settings_color_customization_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_color_customization_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/customize_colors",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_color_customization_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_general_settings_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/general_settings"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_purchase_thank_you_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_purchase_thank_you",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/purchase_simple_thank_you"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_use_english_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_use_english",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/use_english_language"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_language_holder",
+                                "style": "@style/SettingsHolderTextViewStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_language_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/language"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_language",
+                                "style": "@style/SettingsTextValueStyle",
+                                "layout_below": "@+id/settings_language_label",
+                                "text": "English"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_close_app_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_close_app",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Close this app at launching a different one"
+                            },
+                            "dynamic_properties": []
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_settings",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/settings_coordinator"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/settings_toolbar",
+                                "title": "@string/settings",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.core.widget.NestedScrollView",
+                                "id": "@+id/settings_nested_scrollview",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "LinearLayout",
+                                "id": "@+id/settings_holder",
+                                "orientation": "vertical"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_color_customization_section_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/color_customization"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.constraintlayout.widget.ConstraintLayout",
+                                "id": "@+id/settings_color_customization_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_color_customization_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/customize_colors",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_color_customization_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_general_settings_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/general_settings"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_purchase_thank_you_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_purchase_thank_you",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/purchase_simple_thank_you"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_use_english_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_use_english",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/use_english_language"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_language_holder",
+                                "style": "@style/SettingsHolderTextViewStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_language_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/language"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_language",
+                                "style": "@style/SettingsTextValueStyle",
+                                "layout_below": "@+id/settings_language_label",
+                                "text": "English"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_close_app_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_close_app",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Close this app at launching a different one"
+                            },
+                            "dynamic_properties": []
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [],
+            "dialogs": [],
+            "elements": [],
+            "summary": "",
+            "transfer": []
+        },
+        {
+            "name": "com.simplemobiletools.commons.activities.AboutActivity",
+            "layouts": [],
+            "fragments": [],
+            "dialogs": [],
+            "elements": [],
+            "summary": "",
+            "transfer": []
+        },
+        {
+            "name": "com.simplemobiletools.commons.activities.CustomizationActivity",
+            "layouts": [],
+            "fragments": [],
+            "dialogs": [],
+            "elements": [],
+            "summary": "",
+            "transfer": []
+        }
+    ],
+    "activities_name": [
+        "SplashActivity",
+        "MainActivity",
+        "SettingsActivity",
+        "AboutActivity",
+        "CustomizationActivity"
+    ]
+}

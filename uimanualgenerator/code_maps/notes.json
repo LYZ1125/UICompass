@@ -1,0 +1,1266 @@
+{
+    "activities": [
+        {
+            "name": "com.simplemobiletools.notes.pro.activities.SplashActivity",
+            "layouts": [],
+            "fragments": [],
+            "dialogs": [],
+            "elements": [],
+            "summary": "This activity serves as a splash screen that checks for a specific intent extra (`OPEN_NOTE_ID`). If the extra is present, it starts `MainActivity` with the extra data; otherwise, it starts `MainActivity` without any extra data. After starting `MainActivity`, the `SplashActivity` is finished.",
+            "transfer": [
+                "MainActivity"
+            ]
+        },
+        {
+            "name": "com.simplemobiletools.notes.pro.activities.MainActivity",
+            "layouts": [
+                {
+                    "name": "activity_main",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/main_coordinator"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "Provides a top-level container for the activity's UI, coordinating the layout of child views."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/main_toolbar",
+                                "menu": "@menu/menu",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "toolbar",
+                                "effect": "Displays the activity's toolbar, which contains menu items for actions like saving, searching, creating notes, and accessing settings."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "LinearLayout",
+                                "id": "@+id/main_linear_layout",
+                                "orientation": "vertical"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "Organizes child views in a vertical linear layout, ensuring proper alignment and spacing."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/search_wrapper",
+                                "layout": "@layout/search_bar"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "include",
+                                "effect": "Embeds the search bar layout, enabling search functionality within the activity."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyViewPager",
+                                "id": "@+id/view_pager"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "viewpager",
+                                "effect": "Manages the display of multiple notes in a swipeable interface, allowing users to navigate between notes."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.viewpager.widget.PagerTabStrip",
+                                "id": "@+id/pager_tab_strip"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "tabstrip",
+                                "effect": "Provides visual indicators for the current note's position within the ViewPager, aiding navigation."
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.menu_main",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_main",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/main_coordinator"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "Provides a top-level container for the activity's UI, coordinating the layout of child views."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/main_toolbar",
+                                "menu": "@menu/menu",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "toolbar",
+                                "effect": "Displays the activity's toolbar, which contains menu items for actions like saving, searching, creating notes, and accessing settings."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "LinearLayout",
+                                "id": "@+id/main_linear_layout",
+                                "orientation": "vertical"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "layout",
+                                "effect": "Organizes child views in a vertical linear layout, ensuring proper alignment and spacing."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/search_wrapper",
+                                "layout": "@layout/search_bar"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "include",
+                                "effect": "Embeds the search bar layout, enabling search functionality within the activity."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyViewPager",
+                                "id": "@+id/view_pager"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "viewpager",
+                                "effect": "Manages the display of multiple notes in a swipeable interface, allowing users to navigate between notes."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.viewpager.widget.PagerTabStrip",
+                                "id": "@+id/pager_tab_strip"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "tabstrip",
+                                "effect": "Provides visual indicators for the current note's position within the ViewPager, aiding navigation."
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.id.save_note",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [
+                {
+                    "name": "NoteFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "TextFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                },
+                {
+                    "name": "ChecklistFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [],
+            "elements": [],
+            "summary": "The activity serves as the main interface for managing notes, including creating, editing, deleting, and viewing notes. It supports various note types (text and checklist), handles file imports/exports, manages search functionality, and integrates with system features like shortcuts, printing, and sharing. Additionally, it provides options for locking/unlocking notes, sorting checklists, and managing app settings.",
+            "transfer": [
+                "MainActivity",
+                "SplashActivity",
+                "AboutActivity",
+                "SettingsActivity"
+            ]
+        },
+        {
+            "name": "com.simplemobiletools.notes.pro.activities.WidgetConfigureActivity",
+            "layouts": [
+                {
+                    "name": "widget_config",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/config_coordinator"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "parent layout",
+                                "effect": "serves as the root layout for the widget configuration activity."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/config_relative",
+                                "layout_centerHorizontal": "true",
+                                "layout_margin": "@dimen/activity_margin"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "container layout",
+                                "effect": "organizes the main UI elements for widget configuration."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/notes_picker_holder"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "container layout",
+                                "effect": "holds the note picker UI elements."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/show_note_title_holder"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "container layout",
+                                "effect": "holds the checkbox for toggling note title visibility."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/show_note_title",
+                                "clickable": "false",
+                                "layoutDirection": "rtl",
+                                "text": "Show note title",
+                                "switchPadding": "@dimen/medium_margin"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "checkbox",
+                                "effect": "toggles the visibility of the note title in the widget."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/notes_picker_label",
+                                "layout_below": "@+id/show_note_title_holder",
+                                "layout_marginBottom": "@dimen/normal_margin",
+                                "text": "Note shown in the widget:"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "label",
+                                "effect": "displays text indicating the note picker's purpose."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/notes_picker_value",
+                                "layout_below": "@+id/notes_picker_label",
+                                "layout_marginStart": "@dimen/activity_margin",
+                                "text": "General note"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "label",
+                                "effect": "displays the currently selected note for the widget."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/text_note_view_title",
+                                "layout_below": "@+id/notes_picker_holder",
+                                "ellipsize": "end",
+                                "lines": "1",
+                                "text": "@string/title",
+                                "textSize": "@dimen/smaller_text_size"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "label",
+                                "effect": "displays the title of the note shown in the widget."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/text_note_view",
+                                "layout_above": "@+id/config_bg_color",
+                                "layout_below": "@+id/text_note_view_title",
+                                "layout_marginBottom": "@dimen/activity_margin",
+                                "text": "Thank you for using Simple Notes.\\nFor more simple apps please visit SimpleMobileTools.com."
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "text view",
+                                "effect": "displays the content of the note shown in the widget."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyRecyclerView",
+                                "id": "@+id/checklist_note_view",
+                                "layout_above": "@+id/config_bg_color",
+                                "layout_below": "@+id/text_note_view_title",
+                                "layout_marginBottom": "@dimen/activity_margin",
+                                "clipToPadding": "false",
+                                "overScrollMode": "never",
+                                "visibility": "gone",
+                                "layoutManager": "com.simplemobiletools.commons.views.MyLinearLayoutManager"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "recycler view",
+                                "effect": "displays checklist items if the note type is a checklist."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/config_bg_color",
+                                "layout_above": "@+id/config_text_color",
+                                "layout_margin": "@dimen/tiny_margin"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "image view",
+                                "effect": "displays the current background color of the widget."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/config_bg_seekbar_holder",
+                                "layout_alignTop": "@+id/config_bg_color",
+                                "layout_alignBottom": "@+id/config_bg_color",
+                                "layout_marginStart": "@dimen/medium_margin",
+                                "layout_toEndOf": "@+id/config_bg_color"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "container layout",
+                                "effect": "holds the seekbar for adjusting background transparency."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MySeekBar",
+                                "id": "@+id/config_bg_seekbar",
+                                "layout_centerVertical": "true"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "seekbar",
+                                "effect": "adjusts the transparency of the widget's background color."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "ImageView",
+                                "id": "@+id/config_text_color",
+                                "layout_alignParentBottom": "true",
+                                "layout_margin": "@dimen/tiny_margin"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "image view",
+                                "effect": "displays the current text color of the widget."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "Button",
+                                "id": "@+id/config_save",
+                                "style": "@style/MyWidgetConfigSaveStyle",
+                                "layout_alignParentEnd": "true",
+                                "layout_alignParentBottom": "true",
+                                "text": "@string/ok"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "button",
+                                "effect": "saves the widget configuration and exits the activity."
+                            }
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "activity_main",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/main_coordinator"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/main_toolbar",
+                                "menu": "@menu/menu",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "LinearLayout",
+                                "id": "@+id/main_linear_layout",
+                                "orientation": "vertical"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/search_wrapper",
+                                "layout": "@layout/search_bar"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyViewPager",
+                                "id": "@+id/view_pager"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.viewpager.widget.PagerTabStrip",
+                                "id": "@+id/pager_tab_strip"
+                            },
+                            "dynamic_properties": []
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "binding.root",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [
+                {
+                    "name": "ChecklistFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [],
+            "elements": [],
+            "summary": "The `WidgetConfigureActivity` is responsible for configuring the appearance and content of a widget in the Simple Notes Pro app. It allows users to customize the widget's background color, text color, and transparency, as well as select which note to display in the widget. The activity also handles the visibility of the note title, manages note selection, and updates the widget's configuration. Key functionalities include color picking, note selection, widget background and text color customization, and saving the widget configuration.",
+            "transfer": []
+        },
+        {
+            "name": "com.simplemobiletools.commons.activities.AboutActivity",
+            "layouts": [],
+            "fragments": [],
+            "dialogs": [],
+            "elements": [],
+            "summary": "This activity provides information about the app, including its version, developer details, and links to related resources such as the app's website, source code, and developer contact.",
+            "transfer": []
+        },
+        {
+            "name": "com.simplemobiletools.commons.activities.CustomizationActivity",
+            "layouts": [],
+            "fragments": [],
+            "dialogs": [],
+            "elements": [],
+            "summary": "This activity is used for customizing various settings in the application, including theme, color, and other user interface preferences.",
+            "transfer": []
+        },
+        {
+            "name": "com.simplemobiletools.notes.pro.activities.SettingsActivity",
+            "layouts": [
+                {
+                    "name": "activity_settings",
+                    "elements": [
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.coordinatorlayout.widget.CoordinatorLayout",
+                                "id": "@+id/settings_coordinator"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.google.android.material.appbar.MaterialToolbar",
+                                "id": "@+id/settings_toolbar",
+                                "title": "@string/settings",
+                                "titleTextAppearance": "@style/AppTheme.ActionBar.TitleTextStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.core.widget.NestedScrollView",
+                                "id": "@+id/settings_nested_scrollview",
+                                "fillViewport": "true",
+                                "scrollbars": "none"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "LinearLayout",
+                                "id": "@+id/settings_holder",
+                                "orientation": "vertical"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_color_customization_section_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/color_customization"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.constraintlayout.widget.ConstraintLayout",
+                                "id": "@+id/settings_color_customization_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Opens the color customization activity."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_color_customization_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/customize_colors",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "androidx.constraintlayout.widget.ConstraintLayout",
+                                "id": "@+id/settings_widget_color_customization_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Opens the widget color customization activity."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_widget_color_customization_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/customize_widget_colors",
+                                "layout_constraintStart_toStartOf": "parent",
+                                "layout_constraintTop_toTopOf": "parent"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_color_customization_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_general_settings_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/general_settings"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_use_english_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_use_english",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/use_english_language"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Toggles the use of English language and exits the app."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_language_holder",
+                                "style": "@style/SettingsHolderTextViewStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Opens the language selection activity."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_language_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/language"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_language",
+                                "style": "@style/SettingsTextValueStyle",
+                                "layout_below": "@+id/settings_language_label",
+                                "text": "English"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_font_size_holder",
+                                "style": "@style/SettingsHolderTextViewStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Opens a dialog to select font size."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_font_size_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/font_size"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_font_size",
+                                "style": "@style/SettingsTextValueStyle",
+                                "layout_below": "@+id/settings_font_size_label",
+                                "text": "100%"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_general_settings_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_text_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/text"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_show_word_count_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_show_word_count",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Show word count"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Toggles the display of word count."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_clickable_links_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_clickable_links",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Make links and emails clickable"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Toggles the clickable state of links and emails."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_monospaced_font_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_monospaced_font",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Use monospaced font"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Toggles the use of monospaced font."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_use_incognito_mode_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_use_incognito_mode",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Use Incognito mode of keyboards"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Toggles the incognito mode of keyboards."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_enable_line_wrap_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_enable_line_wrap",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Enable line wrap"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Toggles the line wrap feature."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_gravity_holder",
+                                "style": "@style/SettingsHolderTextViewStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Opens a dialog to select text alignment."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_gravity_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "Alignment"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_gravity",
+                                "style": "@style/SettingsTextValueStyle",
+                                "layout_below": "@+id/settings_gravity_label",
+                                "text": "Left"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_text_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_startup_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/startup"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_cursor_placement_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_cursor_placement",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Place cursor to the end of note"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Toggles the placement of the cursor to the end of the note."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_show_keyboard_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_show_keyboard",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Show keyboard on startup"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Toggles the visibility of the keyboard on startup."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_show_note_picker_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_show_note_picker",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Show a note picker on startup"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Toggles the display of the note picker on startup."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_startup_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_saving_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/saving_label"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_autosave_notes_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_autosave_notes",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Autosave notes"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Toggles the autosave notes feature."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_display_success_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_display_success",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "Display save success messages"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Toggles the display of save success messages."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_saving_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_migrating_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/migrating"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_export_notes_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Opens a dialog to export notes."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_export_notes_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "Export notes"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_import_notes_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Opens a dialog to import notes."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_import_notes_label",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "Import notes"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "include",
+                                "id": "@+id/settings_migrating_divider",
+                                "layout": "@layout/divider"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "TextView",
+                                "id": "@+id/settings_backups_label",
+                                "style": "@style/SettingsSectionLabelStyle",
+                                "text": "@string/backups"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_enable_automatic_backups_holder",
+                                "style": "@style/SettingsHolderCheckboxStyle"
+                            },
+                            "dynamic_properties": []
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyAppCompatCheckbox",
+                                "id": "@+id/settings_enable_automatic_backups",
+                                "style": "@style/SettingsCheckboxStyle",
+                                "text": "@string/enable_automatic_backups"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Toggles the automatic backups feature."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "RelativeLayout",
+                                "id": "@+id/settings_manage_automatic_backups_holder",
+                                "style": "@style/SettingsHolderTextViewOneLinerStyle"
+                            },
+                            "dynamic_properties": [],
+                            "dynamic_property": {
+                                "action": "click",
+                                "effect": "Opens a dialog to manage automatic backups."
+                            }
+                        },
+                        {
+                            "name": "0",
+                            "static_properties": {
+                                "tag": "com.simplemobiletools.commons.views.MyTextView",
+                                "id": "@+id/settings_manage_automatic_backups",
+                                "style": "@style/SettingsTextLabelStyle",
+                                "text": "@string/manage_automatic_backups"
+                            },
+                            "dynamic_properties": []
+                        }
+                    ],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "R.menu.settings_menu",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                },
+                {
+                    "name": "binding.root",
+                    "elements": [],
+                    "type": "layout",
+                    "dependencies": []
+                }
+            ],
+            "fragments": [
+                {
+                    "name": "ChecklistFragment",
+                    "layouts": [],
+                    "dialogs": [],
+                    "elements": []
+                }
+            ],
+            "dialogs": [
+                {
+                    "name": "ManageAutoBackupsDialog",
+                    "layouts": [],
+                    "elements": []
+                }
+            ],
+            "elements": [],
+            "summary": "This activity is used for configuring various settings in the app, including color customization, language, font size, text alignment, autosave, keyboard visibility, note picker, word count, line wrap, cursor placement, incognito mode, widget colors, notes export/import, and automatic backups. It also handles the management and display of these settings through user interactions.",
+            "transfer": [
+                "CustomizationActivity",
+                "WidgetConfigureActivity"
+            ]
+        }
+    ],
+    "activities_name": [
+        "SplashActivity",
+        "MainActivity",
+        "WidgetConfigureActivity",
+        "AboutActivity",
+        "CustomizationActivity",
+        "SettingsActivity"
+    ]
+}
