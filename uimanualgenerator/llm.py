@@ -35,9 +35,6 @@ def query_llm_and_parse(prompt, role="You are a android source code analysis ass
     return result
 
 def query_deep_seek_huoshan(prompt, role="You are a android source code analysis assistant"):
-    print('----------prompt --------------')
-    print(prompt)
-    print('====================')
     client = OpenAI(
         api_key = "",
         base_url = "https://ark.cn-beijing.volces.com/api/v3",
@@ -113,7 +110,7 @@ def query_deepseek(prompt, role="You are a android source code analysis assistan
 
 
 def query_zhipu(prompt, role="You are a android source code analysis assistant"):
-    client = ZhipuAI(api_key="ba242cb1d93b40199f33b09984737852.urRGKkUayYXgcfvr")  # 请填写您自己的APIKey
+    client = ZhipuAI(api_key="")  # 请填写您自己的APIKey
     response = client.chat.completions.create(
         model="GLM-4-FlashX",  # 请填写您要调用的模型名称
         messages=[
@@ -134,7 +131,6 @@ def parse_json(answer):
     if '```json' in answer:
         answer = answer.replace("```jsonjson","").replace("```json", "").replace('```', '')    
     if not check_braces(answer):
-        print('----括号不匹配。')
         if '{"{"' in answer: #第一种情况
             answer = answer.replace('{"{"', '{"')
         elif '{{' in answer:

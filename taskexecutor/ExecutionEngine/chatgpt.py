@@ -85,26 +85,10 @@ class Session:
 
 
     def __call__(self, message):
-        print(self.history)
-        print("===========message")
-        print(message)
-        print("----------------------")
-
         self.history.append(('user', message))
-        # resp = chat_completion_with_backoff(
-        #     model=model,
-        #     messages=self.transformMessage(self.history),
-        #     temperature=temp)
         resp = llm.query_llm(prompt="", messages=self.transformMessage(self.history))
-        # self.updateTokensUsed(resp["usage"])
-        # response = resp['choices'][0]['message']['content']
         resp =resp
         response = self.query_llm(message)
-        print(
-            "========response:"
-        )
-        print(response)
-        print("------------------")
         self.history.append(('assistant', response))
         return response
 

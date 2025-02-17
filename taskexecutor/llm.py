@@ -4,14 +4,6 @@ import json
 
 
 def query_llm(prompt, messages= None, role="You are a android source code analysis assistant"):
-    # return quert_llm(prompt)
-    # return query_deep_seek_huoshan(prompt)
-    print('=============prompt=================')
-    if prompt:
-        print(prompt)
-    else:
-        print(messages)
-    print('----------over---------')
     attempts = 0
     max_attempts = 2
     result = None
@@ -30,9 +22,6 @@ def query_deep_seek_huoshan(prompt, role="You are a android source code analysis
         api_key = "",
         base_url = "https://ark.cn-beijing.volces.com/api/v3",
     )
-
-    # Streaming:
-
     completion = client.chat.completions.create(
         model = "ep-20250207124903-xnshd",  # your model endpoint ID
         messages = [
