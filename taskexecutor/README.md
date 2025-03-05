@@ -1,15 +1,5 @@
-# Guardian: A Runtime Framework for LLM-Based UI Exploration
 
-Guardian is a runtime framework for supporting LLM-based UI exploration. 
-Guardian is designed to improve any given LLM agent with our novel concept of computation offloading. 
-![Alt text](figures/computation_offloading.png)
-<!-- <p align="center"> Computation Offloading from LLMs to Symoblic Programs </p> -->
-
-With computation offloading, Guardian allows the LLM agent to offload specific computational tasks such as to symbolic programs which can be used to improve the agent's performance. 
-
-
-Guardian is designed to be easily integrated into any LLM agent, and can be used to improve the performance of any LLM agent. 
-
+TaskExecutor is based on Guardian tools.
 
 ## NOTE
 We are still testing the refactored version of Guardian, please try soon after our internal testing is done.
@@ -64,25 +54,5 @@ python run.py \
 ```
 
 
-
-## Cite our work
-If your find this work useful, please consider cite the following paper:
-
-```
-@inproceedings{ran2024guardian,
-author = {Ran, Dezhi and Wang, Hao and Song, Zihe and Wu, Mengzhou and Cao, Yuan and Zhang, Ying and Yang, Wei and Xie, Tao},
-title = {Guardian: A Runtime Framework for LLM-Based UI Exploration},
-year = {2024},
-isbn = {9798400706127},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-url = {https://doi.org/10.1145/3650212.3680334},
-doi = {10.1145/3650212.3680334},
-booktitle = {Proceedings of the 33rd ACM SIGSOFT International Symposium on Software Testing and Analysis},
-pages = {958–970},
-numpages = {13},
-series = {ISSTA 2024}
-}
-```
 
 
