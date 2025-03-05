@@ -1,23 +1,6 @@
 
 TaskExecutor is based on Guardian tools.
 
-## NOTE
-We are still testing the refactored version of Guardian, please try soon after our internal testing is done.
-
-## Architecture of Guardian
-The implementaion of Guardian strictly follows the overview presneted in our paper ![Alt text](figures/overview.png).
-
-
-### Execution Engine
-
-
-### Memory
-
-### Domain Knowledge Loader
-
-### Infrastructure 
-We reuse part of our code originally used for developing [Badge](https://dl.acm.org/doi/abs/10.1109/ICSE48619.2023.00083), a tool for automated UI testing.
-
 
 
 ## Getting Started
