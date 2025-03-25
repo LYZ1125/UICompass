@@ -9,7 +9,7 @@ save_path="./program_analysis_results/" + target_package.replace('.','_') + '/'
 
 # model config
 model='deep_seek' 
-deep_seek_key="sk-9e853236c509491e807d4c4f65f74e3c"
+deep_seek_key=""
 
 
 
