@@ -14,7 +14,15 @@ The repository mainly consists of three parts:
 1. **uimanualgenerator** → The code section for generating the UI manual.
 2. **taskexecutor** → The part for task execution.  
 3. **experiment** → Experimental results.
-
+<div style="display: flex; overflow-x: auto; gap: 10px; padding: 10px 0;">
+  <img src="./some_result/0.png" width="300" style="flex: 0 0 auto;">
+  <img src="./some_result/1.png" width="300" style="flex: 0 0 auto;">
+  <img src="./some_result/2.png" width="300" style="flex: 0 0 auto;">
+<img src="./some_result/3.png" width="300" style="flex: 0 0 auto;">
+  <img src="./some_result/4.png" width="300" style="flex: 0 0 auto;">
+  <img src="./some_result/5.png" width="300" style="flex: 0 0 auto;">
+  <!-- 更多图片... -->
+</div>
 
 ## 🛠️ UI Map Generator
 
