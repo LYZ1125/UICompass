@@ -15,25 +15,18 @@ The repository mainly consists of three parts:
 2. **taskexecutor** → The part for task execution.  
 3. **experiment** → Experimental results.
 
-##slider
-![Image1](./some_result/0.png "示例1")
-![Image2](./some_result/1.png "示例2")
-![Image3](./some_result/2.png "示例3")
-![Image1](./some_result/3.png "示例1")
-![Image2](./some_result/4.png "示例2")
-![Image3](./some_result/5.png "示例3")
-##end
+
+
+
 
 ## 🛠️ UI Map Generator
-
-
-## 🤖 Executor
-
-## 📦 Run
 1. Run the following command to generate the basic data.  
 > python main.py
-2. Run the following command to integrate it into the UI Manual.
+
+## 🤖 Executor
+following command to integrate it into the UI Manual.
 > python UIManualGenerator.py
+
 
 
 ### ✨ Dataset
